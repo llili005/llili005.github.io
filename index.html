@@ -1,0 +1,360 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --blue:#3986C9;
+  --blue-light:#C2EDFE;
+  --blue-dark:#1f5a9a;
+  --yellow:#F5C800;
+  --yellow-light:#FFF9D6;
+  --white:#ffffff;
+  --gray:#f4f7fb;
+  --text:#1a2540;
+  --text2:#4a5a78;
+  --border:#d6e8f7;
+}
+body{font-family:'Noto Sans JP',sans-serif;background:#fff;color:var(--text);font-size:15px;line-height:1.7}
+.wrap{max-width:1100px;margin:0 auto;padding:0 28px}
+
+/* NAV */
+nav{background:#fff;border-bottom:2px solid var(--blue-light);padding:0;position:sticky;top:0;z-index:100}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;color:var(--blue);letter-spacing:3px}
+.logo span{color:var(--yellow);font-size:10px;font-weight:700;letter-spacing:1px;vertical-align:middle;margin-left:6px;background:var(--yellow);color:#333;padding:2px 7px;border-radius:3px}
+.nav-links{display:flex;gap:28px}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.3px;padding:4px 0;border-bottom:2px solid transparent;transition:all .2s}
+.nav-links a:hover{color:var(--blue);border-color:var(--blue)}
+.nav-cta{background:var(--blue);color:#fff;padding:10px 22px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:700;transition:background .2s}
+.nav-cta:hover{background:var(--blue-dark)}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#e8f4fd 0%,#f0faff 50%,#fff9d0 100%);padding:80px 0 64px;position:relative;overflow:hidden}
+.hero-deco{position:absolute;top:-60px;right:-80px;width:400px;height:400px;background:var(--blue-light);border-radius:50%;opacity:.3}
+.hero-deco2{position:absolute;bottom:-80px;left:-60px;width:280px;height:280px;background:var(--yellow-light);border-radius:50%;opacity:.6}
+.hero-inner{position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-size:11px;font-weight:700;padding:6px 16px;border-radius:99px;letter-spacing:1.5px;margin-bottom:24px}
+.hero-badge::before{content:'';width:6px;height:6px;background:var(--yellow);border-radius:50%}
+h1{font-family:'Noto Sans JP',sans-serif;font-size:clamp(32px,5vw,58px);font-weight:900;line-height:1.5;color:var(--text);margin-bottom:8px;letter-spacing:-1px}
+h1 em{font-style:normal;color:var(--blue)}
+h1 mark{background:var(--yellow);color:var(--text);padding:2px 16px;border-radius:4px;font-style:normal}
+.hero-sub{font-size:16px;color:var(--text2);margin:20px 0 36px;max-width:520px;line-height:1.8}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-main{background:var(--yellow);color:var(--text);padding:14px 32px;border-radius:6px;font-weight:900;font-size:15px;text-decoration:none;transition:transform .2s,box-shadow .2s;display:inline-block;border:2px solid #e0b400}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(245,200,0,.4)}
+.btn-sub{background:#fff;color:var(--blue);padding:14px 32px;border-radius:6px;font-weight:700;font-size:15px;text-decoration:none;border:2px solid var(--blue);transition:all .2s;display:inline-block}
+.btn-sub:hover{background:var(--blue);color:#fff}
+.hero-kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:56px;border-radius:12px;overflow:hidden;border:1.5px solid var(--border);background:var(--border)}
+.kpi-item{background:#fff;padding:24px 20px;text-align:center}
+.kpi-num{font-family:'Oswald',sans-serif;font-size:32px;font-weight:700;color:var(--blue)}
+.kpi-label{font-size:11px;color:var(--text2);margin-top:4px;letter-spacing:.5px}
+
+/* SECTION COMMON */
+.sec{padding:72px 0}
+.sec-gray{background:var(--gray)}
+.sec-blue{background:var(--blue)}
+.sec-tag{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:2px;color:var(--blue);text-transform:uppercase;margin-bottom:10px}
+.sec-tag::before{content:'';display:block;width:20px;height:2px;background:var(--yellow)}
+h2{font-size:clamp(24px,3.5vw,36px);font-weight:900;color:var(--text);margin-bottom:12px;line-height:1.3}
+.sec-lead{color:var(--text2);font-size:15px;margin-bottom:48px;max-width:520px}
+hr.div{border:none;border-top:1.5px solid var(--border);margin:0}
+
+/* SERVICES — 横並びタイムライン型 */
+.service-timeline{margin-top:16px}
+.svc-row{display:grid;grid-template-columns:1fr 80px 1fr;gap:0;align-items:stretch;margin-bottom:0}
+.svc-row:not(:last-child) .svc-center::after{content:'';display:block;width:2px;background:var(--blue-light);flex:1;min-height:32px;margin:0 auto}
+.svc-left,.svc-right{padding:36px 32px;background:#fff;border:1.5px solid var(--border);border-radius:12px;margin:12px 0}
+.svc-left:hover,.svc-right:hover{border-color:var(--blue);box-shadow:0 4px 20px rgba(57,134,201,.1)}
+.svc-center{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;padding:0 8px}
+.svc-num{font-family:'Oswald',sans-serif;font-size:13px;font-weight:700;color:#fff;background:var(--blue);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:1}
+.svc-title{font-size:17px;font-weight:900;color:var(--text);margin-bottom:8px;padding-bottom:8px;border-bottom:2px solid var(--yellow)}
+.svc-desc{font-size:13px;color:var(--text2);line-height:1.8}
+.svc-tag{display:inline-block;background:var(--blue-light);color:var(--blue-dark);font-size:10px;font-weight:700;padding:3px 10px;border-radius:99px;margin-bottom:10px;letter-spacing:.5px}
+
+/* full-width service list alternative */
+.svc-list{display:flex;flex-direction:column;gap:0}
+.svc-item{display:grid;grid-template-columns:72px 1fr;align-items:start;gap:0;padding:28px 0;border-bottom:1.5px solid var(--border)}
+.svc-item:first-child{border-top:1.5px solid var(--border)}
+.svc-no{font-family:'Oswald',sans-serif;font-size:42px;font-weight:700;color:var(--blue-light);line-height:1;padding-top:4px}
+.svc-body{}
+.svc-name{font-size:18px;font-weight:900;color:var(--text);margin-bottom:6px}
+.svc-name span{display:inline-block;background:var(--yellow);padding:1px 8px;border-radius:3px;margin-right:8px;font-size:11px;font-weight:700;color:var(--text);vertical-align:middle}
+.svc-text{font-size:13px;color:var(--text2);line-height:1.8;max-width:680px}
+.svc-point{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.svc-pt{background:var(--blue-light);color:var(--blue-dark);font-size:11px;padding:4px 12px;border-radius:99px;font-weight:700}
+
+/* RESULTS */
+.results-tabs{display:flex;gap:0;border:1.5px solid var(--border);border-radius:8px;overflow:hidden;width:fit-content;margin-bottom:36px}
+.rtab{padding:10px 24px;font-size:13px;font-weight:700;cursor:pointer;background:#fff;color:var(--text2);border:none;transition:all .2s;border-right:1.5px solid var(--border)}
+.rtab:last-child{border-right:none}
+.rtab.on{background:var(--blue);color:#fff}
+.res-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.res-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;overflow:hidden;transition:box-shadow .3s,transform .3s}
+.res-card:hover{box-shadow:0 6px 24px rgba(57,134,201,.15);transform:translateY(-3px)}
+.res-img{width:100%;height:180px;object-fit:cover;display:block;background:#eaf4fd}
+.res-img-placeholder{width:100%;height:180px;background:linear-gradient(135deg,var(--blue-light),#e0f0ff);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--text2)}
+.res-body{padding:18px 20px}
+.res-cat{display:inline-block;background:var(--blue-light);color:var(--blue-dark);font-size:10px;font-weight:700;padding:3px 10px;border-radius:99px;margin-bottom:8px;letter-spacing:.5px}
+.res-name{font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px}
+.res-amount{font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;color:var(--blue)}
+.res-amount-sub{font-size:11px;color:var(--text2);margin-left:4px}
+.res-arrow{font-size:12px;color:var(--text2);margin-top:4px}
+
+/* SIM */
+.sim-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.sim-card{background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:24px 24px 20px;position:relative;border-left:4px solid var(--blue)}
+.sim-card h3{font-size:15px;font-weight:900;color:var(--text);margin-bottom:6px}
+.sim-card p{font-size:12px;color:var(--text2);margin-bottom:14px}
+.sim-link{color:var(--blue);font-size:13px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.sim-link::after{content:'→';transition:margin .2s}
+.sim-link:hover::after{margin-left:4px}
+
+/* CTA */
+.cta-sec{background:var(--blue);padding:64px 0}
+.cta-inner{text-align:center}
+.cta-sec h2{color:#fff;margin-bottom:12px}
+.cta-sec p{color:var(--blue-light);font-size:15px;margin-bottom:32px}
+.btn-yellow{background:var(--yellow);color:#333;padding:16px 40px;border-radius:6px;font-weight:900;font-size:16px;text-decoration:none;border:2px solid #e0b400;display:inline-block;transition:transform .2s,box-shadow .2s}
+.btn-yellow:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+
+/* FOOTER */
+footer{background:#1a2540;padding:36px 0}
+.ft-in{display:flex;justify-content:space-between;align-items:center}
+.ft-logo{font-family:'Oswald',sans-serif;font-size:22px;color:#fff;letter-spacing:3px}
+.ft-links{display:flex;gap:24px}
+.ft-links a{color:#8b9cc0;font-size:12px;text-decoration:none;transition:color .2s}
+.ft-links a:hover{color:#fff}
+.ft-copy{font-size:11px;color:#4a5a78;margin-top:6px}
+</style>
+
+<nav>
+  <div class="wrap">
+    <div class="nav-in">
+      <div class="logo">R3 <span>株式会社</span></div>
+      <div class="nav-links">
+        <a href="#">事業内容</a>
+        <a href="#">削減実績</a>
+        <a href="#">シミュレーション</a>
+      </div>
+      <a href="#" class="nav-cta">無料お問い合わせ</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-deco"></div>
+  <div class="hero-deco2"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-badge">電気代削減の専門家</div>
+    <h1>御社の電気代を<br><em>最大限</em>、<mark>削減</mark>します。</h1>
+    <p class="hero-sub">新電力・電子ブレーカー・太陽光パネル処分。<br>3つのアプローチで最善・最速のご提案をお約束します。</p>
+    <div class="hero-btns">
+      <a href="#" class="btn-main">10秒で削減額を確認する</a>
+      <a href="#" class="btn-sub">削減実績を見る</a>
+    </div>
+    <div class="hero-kpi">
+      <div class="kpi-item"><div class="kpi-num">¥2.5M+</div><div class="kpi-label">最大年間削減額（1社）</div></div>
+      <div class="kpi-item"><div class="kpi-num">3種</div><div class="kpi-label">電気代削減サービス</div></div>
+      <div class="kpi-item"><div class="kpi-num">全国</div><div class="kpi-label">対応エリア</div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- SERVICES -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-tag">Services</div>
+    <h2>3つの電気代削減サービス</h2>
+    <p class="sec-lead">お客様の業態・規模・状況に応じて最適な組み合わせをご提案します。</p>
+
+    <div class="svc-list">
+      <div class="svc-item">
+        <div class="svc-no">01</div>
+        <div class="svc-body">
+          <div class="svc-name"><span>新電力</span>電力会社切替による料金削減</div>
+          <div class="svc-text">2016年の電力自由化以降、消費者は電力会社を自由に選択できるようになりました。弊社は多数のお取引先から、お客様の使用状況・業態に合わせた最適プランをご提案。毎月の電気料金を継続的に削減します。</div>
+          <div class="svc-point">
+            <span class="svc-pt">多数のプランから最適提案</span>
+            <span class="svc-pt">切替手続きも全サポート</span>
+            <span class="svc-pt">毎月継続して削減</span>
+          </div>
+        </div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-no">02</div>
+        <div class="svc-body">
+          <div class="svc-name"><span>電子ブレーカー</span>動力契約の基本料金を削減</div>
+          <div class="svc-text">お客様の実際の使用状況をヒアリングし、最適な契約容量に変更。「ブレーカーを変えるだけで基本料金が半額になった」というケースも。経験豊富な担当者が最大の削減効果を実現します。</div>
+          <div class="svc-point">
+            <span class="svc-pt">使用実績を詳細ヒアリング</span>
+            <span class="svc-pt">基本料金を大幅削減</span>
+            <span class="svc-pt">工事不要のケースも</span>
+          </div>
+        </div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-no">03</div>
+        <div class="svc-body">
+          <div class="svc-name"><span>太陽光パネル処分</span>寿命パネルの安全な撤去・処分</div>
+          <div class="svc-text">耐用年数を過ぎた太陽光パネルは適切な処分が必要です。弊社は全国対応体制で、撤去から廃棄まで安心してお任せいただけます。まずはパネルの状況をお知らせください。</div>
+          <div class="svc-point">
+            <span class="svc-pt">全国対応</span>
+            <span class="svc-pt">撤去〜廃棄まで一括対応</span>
+            <span class="svc-pt">無料見積もり</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- RESULTS -->
+<section class="sec sec-gray">
+  <div class="wrap">
+    <div class="sec-tag">Results</div>
+    <h2>削減実績</h2>
+    <p class="sec-lead">実際のお客様の事例です。タブで切り替えてご覧ください。</p>
+    <div class="results-tabs">
+      <button class="rtab on" onclick="switchTab(this,'shin')">新電力（年間削減）</button>
+      <button class="rtab" onclick="switchTab(this,'breaker')">電子ブレーカー（月額削減）</button>
+    </div>
+
+    <div id="tab-shin" class="res-grid">
+      <div class="res-card">
+        <img class="res-img" src="https://www.r-3.co.jp/wp-content/uploads/2026/01/%E3%81%BB%E3%81%A3%E3%81%A8%E3%82%82%E3%81%A3%E3%81%A8-edited-3-scaled.jpeg" alt="ほっともっと" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="res-img-placeholder" style="display:none">ほっともっと様</div>
+        <div class="res-body">
+          <span class="res-cat">飲食チェーン / FC複数店舗</span>
+          <div class="res-name">ほっともっと様</div>
+          <div><span class="res-amount">¥2,530,562</span><span class="res-amount-sub">年間削減</span></div>
+        </div>
+      </div>
+      <div class="res-card">
+        <img class="res-img" src="https://www.r-3.co.jp/wp-content/uploads/2025/12/%E7%84%BC%E8%82%89%E5%BA%97.png" alt="焼肉店" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="res-img-placeholder" style="display:none">焼肉店様</div>
+        <div class="res-body">
+          <span class="res-cat">飲食業</span>
+          <div class="res-name">焼肉店様</div>
+          <div><span class="res-amount">¥532,812</span><span class="res-amount-sub">年間削減</span></div>
+        </div>
+      </div>
+      <div class="res-card">
+        <img class="res-img" src="https://www.r-3.co.jp/wp-content/uploads/2025/12/%E3%83%91%E3%83%B3%E5%B1%8B.png" alt="ベーカリー" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="res-img-placeholder" style="display:none">ベーカリーショップ様</div>
+        <div class="res-body">
+          <span class="res-cat">製造・小売業</span>
+          <div class="res-name">ベーカリーショップ様</div>
+          <div><span class="res-amount">¥104,376</span><span class="res-amount-sub">年間削減</span></div>
+        </div>
+      </div>
+      <div class="res-card">
+        <img class="res-img" src="https://www.r-3.co.jp/wp-content/uploads/2025/12/%E6%95%B4%E5%82%99%E5%B7%A5%E5%A0%B4-1024x773.png" alt="整備工場" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="res-img-placeholder" style="display:none">自動車整備工場様</div>
+        <div class="res-body">
+          <span class="res-cat">自動車業</span>
+          <div class="res-name">自動車整備工場様</div>
+          <div><span class="res-amount">¥56,268</span><span class="res-amount-sub">年間削減</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-breaker" class="res-grid" style="display:none">
+      <div class="res-card">
+        <img class="res-img" src="https://www.r-3.co.jp/wp-content/uploads/2026/01/%E3%81%BB%E3%81%A3%E3%81%A8%E3%82%82%E3%81%A3%E3%81%A8-edited-3-scaled.jpeg" alt="ほっともっと" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="res-img-placeholder" style="display:none">ほっともっと様</div>
+        <div class="res-body">
+          <span class="res-cat">飲食チェーン / FC複数店舗</span>
+          <div class="res-name">ほっともっと様</div>
+          <div><span class="res-amount">¥108,336</span><span class="res-amount-sub">月額削減</span></div>
+          <div class="res-arrow">¥282,348 → ¥174,012</div>
+        </div>
+      </div>
+      <div class="res-card">
+        <img class="res-img" src="https://www.r-3.co.jp/wp-content/uploads/2025/12/%E7%84%BC%E8%82%89%E5%BA%97.png" alt="焼肉店" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="res-img-placeholder" style="display:none">焼肉店様</div>
+        <div class="res-body">
+          <span class="res-cat">飲食業</span>
+          <div class="res-name">焼肉店様</div>
+          <div><span class="res-amount">¥26,496</span><span class="res-amount-sub">月額削減</span></div>
+          <div class="res-arrow">¥61,380 → ¥34,884</div>
+        </div>
+      </div>
+      <div class="res-card">
+        <img class="res-img" src="https://www.r-3.co.jp/wp-content/uploads/2025/12/%E3%83%91%E3%83%B3%E5%B1%8B.png" alt="ベーカリー" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="res-img-placeholder" style="display:none">ベーカリーショップ様</div>
+        <div class="res-body">
+          <span class="res-cat">製造・小売業</span>
+          <div class="res-name">ベーカリーショップ様</div>
+          <div><span class="res-amount">¥37,340</span><span class="res-amount-sub">月額削減</span></div>
+          <div class="res-arrow">¥66,495 → ¥29,155</div>
+        </div>
+      </div>
+      <div class="res-card">
+        <img class="res-img" src="https://www.r-3.co.jp/wp-content/uploads/2025/12/%E6%95%B4%E5%82%99%E5%B7%A5%E5%A0%B4-1024x773.png" alt="整備工場" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="res-img-placeholder" style="display:none">自動車整備工場様</div>
+        <div class="res-body">
+          <span class="res-cat">自動車業</span>
+          <div class="res-name">自動車整備工場様</div>
+          <div><span class="res-amount">¥6,701</span><span class="res-amount-sub">月額削減</span></div>
+          <div class="res-arrow">¥17,391 → ¥10,690</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- SIM -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-tag">Simulation</div>
+    <h2>削減額シミュレーション</h2>
+    <p class="sec-lead">今すぐ、貴社の削減ポテンシャルを確認できます。</p>
+    <div class="sim-grid">
+      <div class="sim-card"><h3>電気料金シミュレーション</h3><p>現在の電気料金をもとに新電力への切替効果を試算します。</p><a href="#" class="sim-link">試してみる</a></div>
+      <div class="sim-card"><h3>高圧電力シミュレーション</h3><p>高圧電力ご利用の事業者様向けに最適プランをご提案します。</p><a href="#" class="sim-link">試してみる</a></div>
+      <div class="sim-card"><h3>電子ブレーカーシミュレーション</h3><p>動力契約の基本料金削減額を使用状況から試算します。</p><a href="#" class="sim-link">試してみる</a></div>
+      <div class="sim-card"><h3>太陽光パネル撤去シミュレーション</h3><p>パネルの設置状況をもとに撤去費用の目安をご案内します。</p><a href="#" class="sim-link">試してみる</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec">
+  <div class="wrap cta-inner">
+    <h2>まず、無料でご相談ください</h2>
+    <p>相談・シミュレーションはすべて無料です。<br>お客様の状況をヒアリングし、最善のプランをご提案します。</p>
+    <a href="#" class="btn-yellow">お問い合わせはこちら →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="ft-in">
+      <div>
+        <div class="ft-logo">R3</div>
+        <div class="ft-copy">© 株式会社R3 All Rights Reserved.</div>
+      </div>
+      <div class="ft-links">
+        <a href="#">事業内容</a>
+        <a href="#">削減実績</a>
+        <a href="#">シミュレーション</a>
+        <a href="#">お問い合わせ</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function switchTab(el, id) {
+  document.querySelectorAll('.rtab').forEach(t => t.classList.remove('on'));
+  el.classList.add('on');
+  document.getElementById('tab-shin').style.display = id === 'shin' ? 'grid' : 'none';
+  document.getElementById('tab-breaker').style.display = id === 'breaker' ? 'grid' : 'none';
+}
+</script>
