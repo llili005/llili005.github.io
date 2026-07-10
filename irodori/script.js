@@ -188,11 +188,13 @@
       return { tex, fbo };
     };
     const alloc = () => {
-      const ddpr = Math.min(devicePixelRatio || 1, 1.5);
+      const mobile = innerWidth <= 820;
+      const ddpr = Math.min(devicePixelRatio || 1, mobile ? 1 : 1.5);   // cap DPR on phones
+      const simScale = mobile ? 0.34 : 0.5;                              // lighter sim on phones
       dispW = Math.floor(innerWidth * ddpr); dispH = Math.floor(innerHeight * ddpr);
       canvas.width = dispW; canvas.height = dispH;
-      simW = Math.max(2, Math.floor(innerWidth * 0.5));   // low-res sim -> naturally soft "もや"
-      simH = Math.max(2, Math.floor(innerHeight * 0.5));
+      simW = Math.max(2, Math.floor(innerWidth * simScale));   // low-res sim -> naturally soft "もや"
+      simH = Math.max(2, Math.floor(innerHeight * simScale));
       A = makeTarget(simW, simH); B = makeTarget(simW, simH);
     };
     alloc();
@@ -206,8 +208,13 @@
     document.addEventListener('visibilitychange', () => { running = !document.hidden; if (running) requestAnimationFrame(loop); });
 
     const start = performance.now();
+    let lastDraw = 0;
     function loop(now) {
       if (!running) return;
+      requestAnimationFrame(loop);
+      // throttle to ~30fps on phones to keep scrolling smooth
+      if (innerWidth <= 820 && now - lastDraw < 32) return;
+      lastDraw = now;
       const time = (now - start) / 1000;
 
       // resolve target: idle auto-drift until the user moves, then follow pointer
@@ -249,7 +256,6 @@
 
       prevX = pt.x; prevY = pt.y;
       const t = A; A = B; B = t;                          // swap
-      requestAnimationFrame(loop);
     }
     requestAnimationFrame(loop);
     return true;

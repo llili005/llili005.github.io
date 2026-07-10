@@ -44,7 +44,7 @@ img{max-width:100%;display:block}
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
 /* ---------- loader ---------- */
-#loader{position:fixed;inset:0;z-index:200;background:#fff;display:grid;place-content:center;gap:22px;
+#loader{position:fixed;inset:0;z-index:200;background:#fff;display:grid;place-content:center;justify-items:center;gap:22px;text-align:center;
   transition:opacity .7s var(--ease),visibility .7s}
 #loader.done{opacity:0;visibility:hidden}
 .ld-logo{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:clamp(20px,4vw,30px);
@@ -233,6 +233,26 @@ footer{border-top:1px solid var(--line);padding:48px clamp(20px,5vw,60px);backgr
   .about-grid,.mem-grid,.svc-grid{grid-template-columns:1fr}
   .mem-card{flex-direction:column;gap:18px}
   .about-stats{gap:28px}
+
+  /* SP: stop auto-slide, let the user swipe freely */
+  .wk-slider{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;
+    scroll-snap-type:x proximity;scroll-padding-left:20px;
+    -webkit-mask:none;mask:none;touch-action:pan-x}
+  .wk-slider::-webkit-scrollbar{display:none}
+  .wk-track{animation:none;width:max-content;padding:6px 20px}
+  .wk-slide{scroll-snap-align:start;flex-basis:74vw;max-width:320px}
+  .wk-slide[aria-hidden="true"]{display:none}   /* drop loop duplicates when swiping manually */
+
+  /* SP: remove expensive compositing (backdrop-filter / blend) that janks iOS scroll */
+  #nav.scrolled,.hero-label,.btn-ghost,.mem-card,.svc-card,.wk-slide,footer,.nav-menu{
+    -webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+  #nav.scrolled{background:rgba(255,255,255,.92)}
+  .nav-menu{background:rgba(255,255,255,.97)}
+  .hero-label,.btn-ghost{background:rgba(255,255,255,.78)}
+  .mem-card,.svc-card,.wk-slide{background:rgba(255,255,255,.85)}
+  footer{background:rgba(255,255,255,.92)}
+  .bg-grid{mix-blend-mode:normal;opacity:.42}
+  .bg-grain{display:none}
 }
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;scroll-behavior:auto}
