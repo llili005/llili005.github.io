@@ -541,7 +541,7 @@ img {
 
 .top_kv_desc {
   margin-top: 22px;
-  max-width: 600px;
+  max-width: 650px;
   color: var(--ink-dim-color);
   font-size: clamp(14px, 1.5vw, 16px);
   font-weight: 400;
