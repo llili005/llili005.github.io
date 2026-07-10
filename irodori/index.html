@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>COLOR CODE | デザインと実装、その境界をなくす。</title>
+<meta name="description" content="COLOR CODEは、デザイナーとコーダーの2人で活動するWeb制作チームです。ブランドの未来を、設計から実装まで一貫してかたちにします。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- iridescent haze background -->
+<div class="bg">
+  <canvas id="gl"></canvas>
+  <div class="bg-grid"></div>
+  <div class="bg-vignette"></div>
+  <div class="bg-grain"></div>
+</div>
+
+<!-- loader -->
+<div id="loader"><div class="ld-logo">COLOR<span>CODE</span></div><div class="ld-bar"><i></i></div></div>
+
+<!-- nav -->
+<header id="nav">
+  <a href="#top" class="nav-logo">COLOR<span>/</span>CODE</a>
+  <nav class="nav-menu" id="menu">
+    <a href="#about">About</a>
+    <a href="#members">Members</a>
+    <a href="#service">Service</a>
+    <a href="#works">Works</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact" class="nav-cta">Contact</a>
+  </nav>
+  <button class="nav-ham" id="ham" aria-label="menu"><span></span><span></span></button>
+</header>
+
+<!-- HERO -->
+<section id="top" class="hero">
+  <div class="hero-inner">
+    <p class="hero-label rvh"><span class="dot"></span>Design &amp; Development studio</p>
+    <h1 class="hero-h1">
+      <span class="line rvh d1">デザインと実装、</span>
+      <span class="line grad rvh d2">その境界をなくす。</span>
+    </h1>
+    <p class="hero-en rvh d3">Design <em>×</em> Development</p>
+    <p class="hero-sub rvh d4">
+      ただ美しいだけでは終わらない。成果へつながるWebを。<br>
+      デザイナーとコーダー、2人のチームでブランドの未来をかたちにします。
+    </p>
+    <div class="hero-btns rvh d5">
+      <a href="#works" class="btn btn-fill">実績を見る</a>
+      <a href="#contact" class="btn btn-ghost">お問い合わせ</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><span>Scroll</span><i></i></div>
+</section>
+
+<!-- WORKS slider (directly under FV) -->
+<section id="works" class="wk">
+  <div class="wk-head wrap">
+    <p class="sec-label rv">Works</p>
+    <h2 class="wk-h2 rv d1">制作<em>実績</em></h2>
+  </div>
+  <div class="wk-slider">
+    <div class="wk-track">
+      <!-- set 1 -->
+      <a href="#" class="wk-slide" style="--a:#ff8fc0;--b:#ffc98f"><div class="wk-thumb2">Aa</div><div class="wk-cap"><span>Branding / Web</span><h3>organic cosmetics — brand site</h3></div></a>
+      <a href="#" class="wk-slide" style="--a:#8fdcff;--b:#c4a8ff"><div class="wk-thumb2">Bb</div><div class="wk-cap"><span>Corporate</span><h3>construction co. — recruit site</h3></div></a>
+      <a href="#" class="wk-slide" style="--a:#9cf7c4;--b:#8fdcff"><div class="wk-thumb2">Cc</div><div class="wk-cap"><span>EC / Shopify</span><h3>select shop — online store</h3></div></a>
+      <a href="#" class="wk-slide" style="--a:#ffc98f;--b:#ff8fc0"><div class="wk-thumb2">Dd</div><div class="wk-cap"><span>Campaign / LP</span><h3>music festival — teaser lp</h3></div></a>
+      <a href="#" class="wk-slide" style="--a:#c4a8ff;--b:#9cf7c4"><div class="wk-thumb2">Ee</div><div class="wk-cap"><span>Brand / Web</span><h3>coffee roaster — official site</h3></div></a>
+      <a href="#" class="wk-slide" style="--a:#fff08f;--b:#8fdcff"><div class="wk-thumb2">Ff</div><div class="wk-cap"><span>WordPress</span><h3>clinic — renewal &amp; cms</h3></div></a>
+      <!-- set 2 (duplicate for seamless loop) -->
+      <a href="#" class="wk-slide" style="--a:#ff8fc0;--b:#ffc98f" aria-hidden="true"><div class="wk-thumb2">Aa</div><div class="wk-cap"><span>Branding / Web</span><h3>organic cosmetics — brand site</h3></div></a>
+      <a href="#" class="wk-slide" style="--a:#8fdcff;--b:#c4a8ff" aria-hidden="true"><div class="wk-thumb2">Bb</div><div class="wk-cap"><span>Corporate</span><h3>construction co. — recruit site</h3></div></a>
+      <a href="#" class="wk-slide" style="--a:#9cf7c4;--b:#8fdcff" aria-hidden="true"><div class="wk-thumb2">Cc</div><div class="wk-cap"><span>EC / Shopify</span><h3>select shop — online store</h3></div></a>
+      <a href="#" class="wk-slide" style="--a:#ffc98f;--b:#ff8fc0" aria-hidden="true"><div class="wk-thumb2">Dd</div><div class="wk-cap"><span>Campaign / LP</span><h3>music festival — teaser lp</h3></div></a>
+      <a href="#" class="wk-slide" style="--a:#c4a8ff;--b:#9cf7c4" aria-hidden="true"><div class="wk-thumb2">Ee</div><div class="wk-cap"><span>Brand / Web</span><h3>coffee roaster — official site</h3></div></a>
+      <a href="#" class="wk-slide" style="--a:#fff08f;--b:#8fdcff" aria-hidden="true"><div class="wk-thumb2">Ff</div><div class="wk-cap"><span>WordPress</span><h3>clinic — renewal &amp; cms</h3></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="sec">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-head rv">
+        <p class="sec-label">About us</p>
+        <h2 class="sec-h2">デザインだけでは、<br>サイトは<em>完成しない。</em></h2>
+      </div>
+      <div class="about-body rv d1">
+        <p class="about-lead">
+          デザインだけではサイトは完成しません。技術だけでも、想いは伝わりません。
+        </p>
+        <p>
+          私たちCOLOR CODEは、デザイナーとコーダーの2人で活動するWeb制作チームです。
+          お客様の想いや事業の魅力を丁寧に汲み取り、デザインと実装の両輪で
+          「伝わるWebサイト」をつくります。
+        </p>
+        <p>
+          少人数だからこそ、窓口はいつも同じ。認識のズレや伝言ゲームがなく、
+          スピーディーかつ細部までこだわった制作が可能です。
+          デザインと実装のあいだにある境界を、私たちはなくしていきます。
+        </p>
+        <div class="about-stats">
+          <div class="stat"><b class="count" data-to="80">0</b><span>制作実績</span></div>
+          <div class="stat"><b class="count" data-to="2">0</b><span>人チーム</span></div>
+          <div class="stat"><b class="count" data-to="98">0</b><span>継続率 %</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBERS -->
+<section id="members" class="sec sec-alt">
+  <div class="wrap">
+    <p class="sec-label rv">Members</p>
+    <h2 class="sec-h2 rv d1">2人の<em>チーム</em></h2>
+    <div class="mem-grid">
+      <article class="mem-card rv d1">
+        <div class="mem-photo" style="--a:#ff6fae;--b:#ffb36f"><span>D</span></div>
+        <div class="mem-body">
+          <p class="mem-role">Designer / Art Director</p>
+          <h3 class="mem-name">Designer<span class="mem-jp">デザイン担当</span></h3>
+          <p class="mem-txt">ブランドの世界観を設計し、UI・アートディレクションを担当。「らしさ」を細部まで宿したビジュアルを追求します。</p>
+          <ul class="mem-skill"><li>Art Direction</li><li>UI / UX</li><li>Branding</li></ul>
+        </div>
+      </article>
+      <article class="mem-card rv d2">
+        <div class="mem-photo" style="--a:#6fd3ff;--b:#a98cff"><span>C</span></div>
+        <div class="mem-body">
+          <p class="mem-role">Coder / Frontend Engineer</p>
+          <h3 class="mem-name">Coder<span class="mem-jp">実装担当</span></h3>
+          <p class="mem-txt">デザインの意図を1px単位で再現する実装を担当。表現力のあるアニメーションと、速く堅牢なフロントを構築します。</p>
+          <ul class="mem-skill"><li>Frontend</li><li>Animation</li><li>WordPress</li></ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE -->
+<section id="service" class="sec">
+  <div class="wrap">
+    <p class="sec-label rv">Service</p>
+    <h2 class="sec-h2 rv d1">できる<em>こと</em></h2>
+    <div class="svc-grid">
+      <article class="svc-card rv d1">
+        <span class="svc-no">01</span>
+        <h3>Web Design</h3>
+        <p>ブランドの世界観を体験へ翻訳。細部まで作り込んだビジュアルと、使いやすさを両立したデザインをつくります。</p>
+      </article>
+      <article class="svc-card rv d2">
+        <span class="svc-no">02</span>
+        <h3>Development</h3>
+        <p>デザインの意図を損なわない高品質な実装。動きのある表現と、速く堅牢なフロントエンドを構築します。</p>
+      </article>
+      <article class="svc-card rv d3">
+        <span class="svc-no">03</span>
+        <h3>Branding</h3>
+        <p>ロゴやトーン&amp;マナーからコピーまで、一貫した世界観を設計。Webを起点にブランド体験を整えます。</p>
+      </article>
+      <article class="svc-card rv d4">
+        <span class="svc-no">04</span>
+        <h3>CMS / 運用</h3>
+        <p>WordPressをはじめとしたCMS構築や、公開後の更新・保守まで。長期的に伴走します。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section id="flow" class="sec">
+  <div class="wrap">
+    <p class="sec-label rv">Flow</p>
+    <h2 class="sec-h2 rv d1">制作の<em>流れ</em></h2>
+    <div class="flow-list">
+      <div class="flow-item rv d1"><span class="flow-no">01</span><div><h3>お問い合わせ・ヒアリング</h3><p>目的・課題・ご予算・納期をお伺いし、方向性をすり合わせます。</p></div></div>
+      <div class="flow-item rv d2"><span class="flow-no">02</span><div><h3>ご提案・お見積もり</h3><p>設計と全体方針をご提案。内容にご納得いただいたうえで契約します。</p></div></div>
+      <div class="flow-item rv d3"><span class="flow-no">03</span><div><h3>デザイン・実装</h3><p>デザインから実装まで、進捗を共有しながら丁寧に制作を進めます。</p></div></div>
+      <div class="flow-item rv d4"><span class="flow-no">04</span><div><h3>公開・運用</h3><p>公開後の更新・保守や追加施策まで、長期的に伴走します。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="sec sec-alt">
+  <div class="wrap">
+    <p class="sec-label rv">FAQ</p>
+    <h2 class="sec-h2 rv d1">よくある<em>ご質問</em></h2>
+    <div class="faq-list rv d1">
+      <div class="faq-item">
+        <button class="faq-q">どんなジャンルのサイトでも制作できますか？<i></i></button>
+        <div class="faq-a"><p>コーポレート・採用・ブランド・LP・ECなど、幅広いジャンルに対応しています。まずはご相談ください。ジャンルによっては得意な事例をご紹介します。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">写真素材は用意する必要がありますか？<i></i></button>
+        <div class="faq-a"><p>お持ちの素材があればご活用いただけますが、ない場合はストックフォトのご提案や、撮影ディレクションのご相談も可能です。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">原稿はすべて用意する必要がありますか？<i></i></button>
+        <div class="faq-a"><p>いいえ。ラフなメモや箇条書きからでも大丈夫です。ヒアリングをもとに、構成やコピーの作成もお手伝いできます。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">既存サイトの修正や更新もお願いできますか？<i></i></button>
+        <div class="faq-a"><p>はい。部分的な修正・リニューアル・運用代行にも対応しています。現状のサイトを拝見したうえでご提案します。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">急ぎの相談にも対応してもらえますか？<i></i></button>
+        <div class="faq-a"><p>スケジュールの状況によりますが、可能な限り柔軟に対応します。納期がお決まりの場合は、まずお早めにご連絡ください。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">遠方からでも依頼できますか？<i></i></button>
+        <div class="faq-a"><p>もちろんです。オンラインでの打ち合わせが中心のため、全国どこからでもご依頼いただけます。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">ドメインやサーバーのことが分からなくても大丈夫ですか？<i></i></button>
+        <div class="faq-a"><p>ご安心ください。取得・設定・公開まわりまで、専門用語をかみ砕いてご案内・代行します。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">WordPressにも対応していますか？<i></i></button>
+        <div class="faq-a"><p>はい。WordPressでの構築や、お客様ご自身で更新できるCMS化にも対応しています。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">制作後の保守・運用もお願いできますか？<i></i></button>
+        <div class="faq-a"><p>はい。更新代行・軽微な修正・保守プランなど、公開後も継続的にサポートいたします。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="sec sec-contact">
+  <div class="wrap contact-inner">
+    <p class="sec-label rv" style="justify-content:center">Contact</p>
+    <h2 class="contact-h2 rv d1">「何を依頼すればいいか<br>分からない」<em>でも大丈夫。</em></h2>
+    <p class="contact-sub rv d2">
+      お客様のお話を伺いながら、課題や目的を整理し、最適なご提案をいたします。<br>
+      まずはお気軽にご相談ください。
+    </p>
+    <a href="mailto:hello@colorcode.example" class="btn btn-fill contact-btn rv d3">お問い合わせはこちら →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap ft-inner">
+    <div class="ft-logo">COLOR<span>/</span>CODE</div>
+    <nav class="ft-nav"><a href="#about">About</a><a href="#members">Members</a><a href="#service">Service</a><a href="#works">Works</a><a href="#faq">FAQ</a></nav>
+    <p class="ft-copy">© 2026 COLOR CODE</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
