@@ -33,20 +33,47 @@ navigation?.querySelectorAll('a').forEach((link) => {
   });
 });
 
-/*---------- フローティング・コンタクトボタン（contact 表示中は隠す） ----------*/
+/*---------- フローティング・コンタクトボタン ----------*/
+/* 表示条件：contact セクションが出ていない かつ
+   SP のときは FV(#top) を抜けてから表示（PC は従来どおり常時表示）。*/
 (() => {
   const floatBtn = document.querySelector('.js_contact-float');
+  if (!floatBtn) return;
   const contactSection = document.querySelector('#contact');
-  if (!floatBtn || !contactSection) return;
-  const contactObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        floatBtn.classList.toggle('is-hidden', entry.isIntersecting);
-      });
-    },
-    { threshold: 0.25 }
-  );
-  contactObserver.observe(contactSection);
+  const fv = document.querySelector('#top');
+  const spMQ = matchMedia('(max-width: 820px)');
+
+  let contactInView = false;
+  let fvInView = !!fv; // FV があれば初期は表示中とみなす（＝SPでは隠す）
+
+  const update = () => {
+    let show = !contactInView;
+    if (spMQ.matches && fv) show = show && !fvInView; // SP は FV 通過後のみ
+    floatBtn.classList.toggle('is-shown', show);
+  };
+
+  if (contactSection) {
+    new IntersectionObserver(
+      (entries) => {
+        contactInView = entries[0].isIntersecting;
+        update();
+      },
+      { threshold: 0.25 }
+    ).observe(contactSection);
+  }
+
+  if (fv) {
+    new IntersectionObserver(
+      (entries) => {
+        fvInView = entries[0].isIntersecting;
+        update();
+      },
+      { threshold: 0 }
+    ).observe(fv);
+  }
+
+  spMQ.addEventListener('change', update);
+  update();
 })();
 
 /*---------- サービス下層：左ナビのスクロール連動（scrollspy） ----------*/

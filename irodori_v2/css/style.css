@@ -494,13 +494,16 @@ img {
   border-radius: 50%;
   /* 淡いコーラルの半透明リング地 */
   background: rgba(248, 79, 101, 0.13);
-  transition:
-    transform 0.4s var(--ease),
-    background 0.35s;
-  /* 出現アニメーション（読み込み後にふわっと） */
+  /* 既定は非表示。JS が is-shown を付けたときだけ表示（SP は FV 通過後） */
   opacity: 0;
-  transform: scale(0.6);
-  animation: contact-float-in 0.7s var(--ease) 1.2s forwards;
+  visibility: hidden;
+  transform: scale(0.85);
+  pointer-events: none;
+  transition:
+    opacity 0.5s var(--ease),
+    transform 0.5s var(--ease),
+    visibility 0.5s,
+    background 0.35s;
 }
 
 /* 中央の白い円 */
@@ -513,27 +516,16 @@ img {
   box-shadow: 0 8px 26px rgba(20, 20, 40, 0.08);
 }
 
-@keyframes contact-float-in {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+.m_contact-float.is-shown {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  pointer-events: auto;
 }
 
-.m_contact-float:hover {
+.m_contact-float.is-shown:hover {
   background: rgba(248, 79, 101, 0.22);
   transform: scale(1.05);
-}
-
-.m_contact-float.is-hidden {
-  opacity: 0;
-  visibility: hidden;
-  transform: scale(0.6);
-  pointer-events: none;
-  transition:
-    opacity 0.4s var(--ease),
-    transform 0.4s var(--ease),
-    visibility 0.4s;
 }
 
 /* 円周を回るテキスト（CONTACT ・ …） */
@@ -723,17 +715,8 @@ img {
   text-transform: uppercase;
   color: var(--ink-dim-color);
   padding: 8px 16px;
-  border: 1px solid var(--line-color);
   border-radius: 100px;
   background: rgba(255, 255, 255, 0.78);
-}
-
-.top_kv_dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #12b06a;
-  box-shadow: 0 0 12px #12b06a;
 }
 
 .top_kv_copy {
@@ -1598,6 +1581,11 @@ img {
   }
 
   .m_hamburger {
+    display: none;
+  }
+
+  /* PC では FV のボタン（実績を見る / お問い合わせ）を非表示（SP は表示） */
+  .top_kv_btn-wrapper {
     display: none;
   }
 
