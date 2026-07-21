@@ -1126,6 +1126,57 @@ img {
   }
 }
 
+/* ---------- top : works（実績グリッド） ---------- */
+.top_achieve_grid {
+  list-style: none;
+  margin-top: clamp(28px, 4vw, 48px);
+  display: grid;
+  gap: clamp(18px, 2.4vw, 28px);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+}
+
+.top_achieve_card {
+  display: block;
+  height: 100%;
+  border: 1px solid var(--line-color);
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--white-color);
+  box-shadow: 0 10px 40px rgba(20, 20, 40, 0.05);
+  transition:
+    transform 0.4s var(--ease),
+    border-color 0.4s;
+}
+
+.top_achieve_card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(20, 20, 30, 0.2);
+}
+
+.top_achieve_thumb {
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(140deg, var(--a), var(--b));
+}
+
+.top_achieve_body {
+  padding: 18px 20px 22px;
+}
+
+.top_achieve_cat {
+  font-family: var(--font-en);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-dim-color);
+}
+
+.top_achieve_title {
+  font-family: var(--font-en);
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 6px;
+}
+
 /* ---------- top : about ---------- */
 .top_about_body {
   display: grid;
@@ -1200,6 +1251,7 @@ img {
 }
 
 .top_members_item_photo {
+  position: relative;
   flex: 0 0 96px;
   height: 96px;
   border-radius: 18px;
@@ -1213,8 +1265,10 @@ img {
   background: linear-gradient(140deg, var(--a), var(--b));
 }
 
-/* 顔写真を埋め込む場合（枠いっぱいにフィット・PC正方形はcoverで切り抜き） */
+/* 顔写真を埋め込む場合（枠に絶対配置でフィット＝coverで切り抜き） */
 .top_members_item_photo_img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1333,6 +1387,22 @@ img {
   font-size: 24px;
   font-weight: 600;
   margin: 14px 0 12px;
+}
+
+/* 「パートナー対応」などの小さなタグ */
+.top_service_item_tag {
+  display: inline-block;
+  margin-left: 8px;
+  vertical-align: middle;
+  font-family: var(--font-jp);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--accent-color);
+  background: rgba(248, 79, 101, 0.1);
+  padding: 3px 10px;
+  border-radius: 100px;
+  white-space: nowrap;
 }
 
 .top_service_item_desc {
@@ -1905,6 +1975,14 @@ img {
   .top_members_item {
     flex-direction: row;
     gap: 26px;
+    align-items: flex-start;
+  }
+
+  /* PC：写真は大きめの正方形。画像はcoverで正方形いっぱいに切り抜き */
+  .top_members_item_photo {
+    flex: 0 0 clamp(120px, 12vw, 168px);
+    height: auto;
+    aspect-ratio: 1 / 1;
   }
 
   /* service : 左固定ナビ + 右スクロール */
