@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>irodori | Webに、彩りを。</title>
+    <meta
+      name="description"
+      content="irodori（彩り）は、デザインとコーディングの専門性を掛け合わせ、一つひとつのWebサイトに彩りを添える制作チームです。"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- ogp -->
+    <meta property="og:site_name" content="irodori" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="irodori | Webに、彩りを。" />
+    <meta
+      property="og:description"
+      content="デザインとコーディングの専門性を掛け合わせ、Webサイトに彩りを添える。お客様らしさという色を、私たちが形にします。"
+    />
+    <meta property="og:locale" content="ja_JP" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Parisienne&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- js -->
+    <script src="js/main.js" defer></script>
+  </head>
+  <body class="js_body">
+    <!-- iridescent haze background -->
+    <div class="l_bg">
+      <div class="l_bg_grid"></div>
+      <div class="l_bg_vignette"></div>
+      <div class="l_bg_grain"></div>
+    </div>
+    <!-- /.l_bg -->
+
+    <!-- opening / loader -->
+    <div class="m_opening js_opening">
+      <div class="m_opening_logo"><img class="m_opening_logo_img" src="img/irodori-logo.png" alt="irodori" /></div>
+      <div class="m_opening_bar"><i class="m_opening_bar-inner"></i></div>
+    </div>
+    <!-- /.m_opening -->
+
+    <header class="l_header js_header">
+      <a href="#top" class="l_header-logo"><img class="l_header-logo_img" src="img/irodori-logo.png" alt="irodori" /></a>
+      <nav class="l_header-nav js_nav" aria-label="メインメニュー">
+        <ul class="l_header-nav_list">
+          <li class="l_header-nav_item">
+            <a href="#about" class="l_header-nav_link">About</a>
+          </li>
+          <li class="l_header-nav_item">
+            <a href="#members" class="l_header-nav_link">Members</a>
+          </li>
+          <li class="l_header-nav_item l_header-nav_item__sub">
+            <a href="service.html" class="l_header-nav_link">Service</a>
+            <ul class="l_header-nav_sub">
+              <li class="l_header-nav_sub_item">
+                <a href="service.html" class="l_header-nav_sub_link">
+                  作りたいものから選ぶ
+                </a>
+              </li>
+              <li class="l_header-nav_sub_item">
+                <a href="service_issue.html" class="l_header-nav_sub_link">
+                  課題から選ぶ
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="l_header-nav_item">
+            <a href="#works" class="l_header-nav_link">Works</a>
+          </li>
+          <li class="l_header-nav_item">
+            <a href="#faq" class="l_header-nav_link">FAQ</a>
+          </li>
+          <li class="l_header-nav_item">
+            <a href="#contact" class="l_header-nav_link l_header-nav_link__cta">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <button class="m_hamburger js_hamburger" aria-label="メニュー">
+        <span class="m_hamburger-bar"></span>
+        <span class="m_hamburger-bar"></span>
+      </button>
+    </header>
+    <!-- /.l_header -->
+
+    <!-- KV / hero -->
+    <div id="top" class="top_kv">
+      <!-- FVだけ：中央に浮かぶ大きな彩りブロブが様々な形にモーフィング（teruteru参考／男女問わず好まれる寒色ベース） -->
+      <div class="top_kv_bg" aria-hidden="true">
+        <svg
+          class="top_kv_bg_waves"
+          viewBox="0 0 1440 900"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <defs>
+            <linearGradient id="kvBack" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#c7f5ec" />
+              <stop offset="0.5" stop-color="#cfe6ff" />
+              <stop offset="1" stop-color="#ddd9ff" />
+            </linearGradient>
+            <linearGradient id="kvFront" x1="0.1" y1="0" x2="0.9" y2="1">
+              <stop offset="0" stop-color="#4fd9c0" />
+              <stop offset="0.34" stop-color="#4bb8f5" />
+              <stop offset="0.68" stop-color="#7c9cff" />
+              <stop offset="1" stop-color="#a98bff" />
+            </linearGradient>
+          </defs>
+          <!-- 奥：淡い大きなブロブ -->
+          <path class="top_kv_bg_wave top_kv_bg_wave__back" fill="url(#kvBack)"
+            d="M720,120 C960,100 1160,260 1150,455 C1140,660 940,770 720,770 C500,770 300,660 290,455 C280,260 480,140 720,120 Z">
+            <animate attributeName="d" dur="24s" repeatCount="indefinite"
+              calcMode="spline" keyTimes="0;0.33;0.66;1"
+              keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"
+              values="M720,120 C960,100 1160,260 1150,455 C1140,660 940,770 720,770 C500,770 300,660 290,455 C280,260 480,140 720,120 Z;M705,150 C980,110 1180,290 1150,470 C1120,660 920,740 700,735 C480,730 280,620 320,440 C360,255 480,190 705,150 Z;M735,110 C950,95 1140,270 1135,470 C1130,680 960,795 715,780 C495,770 310,680 300,460 C290,250 520,125 735,110 Z;M720,120 C960,100 1160,260 1150,455 C1140,660 940,770 720,770 C500,770 300,660 290,455 C280,260 480,140 720,120 Z" />
+          </path>
+          <!-- 手前：濃いメインブロブ -->
+          <path class="top_kv_bg_wave top_kv_bg_wave__front" fill="url(#kvFront)"
+            d="M720,180 C910,160 1090,280 1080,455 C1070,630 900,720 720,720 C540,720 370,630 360,455 C350,280 530,200 720,180 Z">
+            <animate attributeName="d" dur="18s" repeatCount="indefinite"
+              calcMode="spline" keyTimes="0;0.25;0.5;0.75;1"
+              keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"
+              values="M720,180 C910,160 1090,280 1080,455 C1070,630 900,720 720,720 C540,720 370,630 360,455 C350,280 530,200 720,180 Z;M710,210 C930,175 1120,300 1090,470 C1060,640 880,700 705,690 C520,680 350,610 385,440 C415,275 500,245 710,210 Z;M730,165 C900,150 1060,290 1055,470 C1050,660 910,745 715,735 C545,725 385,640 375,455 C365,275 545,180 730,165 Z;M700,195 C920,165 1105,315 1070,480 C1040,635 875,715 700,705 C525,695 360,600 395,430 C425,265 495,225 700,195 Z;M720,180 C910,160 1090,280 1080,455 C1070,630 900,720 720,720 C540,720 370,630 360,455 C350,280 530,200 720,180 Z" />
+          </path>
+        </svg>
+        <!-- きらめき（差し色の黄色いスパークル） -->
+        <span class="top_kv_bg_sparkle"></span>
+      </div>
+      <!-- /.top_kv_bg -->
+      <div class="top_kv-inner">
+        <div class="top_kv_box">
+          <p class="top_kv_sub-copy m_reveal js_reveal">
+            <span class="top_kv_dot"></span>Web Design &amp; Code studio
+          </p>
+          <div class="top_kv_logo m_reveal m_reveal__d1 js_reveal">
+            <img src="img/irodori-logo.png" alt="irodori" />
+          </div>
+          <h1 class="top_kv_copy">
+            <span class="m_reveal m_reveal__d1 js_reveal">Webに、</span
+            ><span class="m_reveal m_reveal__d2 js_reveal">彩りを。</span>
+          </h1>
+          <p class="top_kv_en m_reveal m_reveal__d3 js_reveal">
+            Design <em>×</em> Code
+          </p>
+          <p class="top_kv_desc m_reveal m_reveal__d4 js_reveal">
+            デザインとコーディングの専門性を掛け合わせ、お客様らしさという“色”を引き出す。<br />
+            一つとして同じ色はない、あなたのブランドらしさを形にします。
+          </p>
+          <div class="m_btn-wrapper top_kv_btn-wrapper m_reveal m_reveal__d5 js_reveal">
+            <a href="#works" class="m_btn m_btn__fill">実績を見る</a>
+            <a href="#contact" class="m_btn m_btn__ghost">お問い合わせ</a>
+          </div>
+          <!-- /.m_btn-wrapper -->
+        </div>
+        <!-- /.top_kv_box -->
+      </div>
+      <!-- /.top_kv-inner -->
+
+      <!-- FV下部：端末モックアップが横スライド（背景は透明でFVの波がバック） -->
+      <div id="works" class="top_kv_slider top_works_slider js_works-slider">
+        <div class="top_works_track">
+          <!-- set 1 : PC多め（PC PC PC SP …） -->
+          <a href="#" class="top_works_item mock mock--laptop" style="--a: #ff8fc0; --b: #ffc98f" aria-label="制作実績（サンプル）">
+            <span class="mock_screen"><span class="mock_bar"></span></span>
+            <span class="mock_base"></span>
+          </a>
+          <a href="#" class="top_works_item mock mock--laptop" style="--a: #8fdcff; --b: #c4a8ff" aria-label="制作実績（サンプル）">
+            <span class="mock_screen"><span class="mock_bar"></span></span>
+            <span class="mock_base"></span>
+          </a>
+          <a href="#" class="top_works_item mock mock--laptop" style="--a: #9cf7c4; --b: #8fdcff" aria-label="制作実績（サンプル）">
+            <span class="mock_screen"><span class="mock_bar"></span></span>
+            <span class="mock_base"></span>
+          </a>
+          <a href="#" class="top_works_item mock mock--phone" style="--a: #ffc98f; --b: #ff8fc0" aria-label="制作実績（サンプル）">
+            <span class="mock_screen"><span class="mock_notch"></span></span>
+          </a>
+          <span class="top_works_item mock mock--word"><span>irodori<em>creative</em></span></span>
+          <a href="#" class="top_works_item mock mock--laptop" style="--a: #c4a8ff; --b: #9cf7c4" aria-label="制作実績（サンプル）">
+            <span class="mock_screen"><span class="mock_bar"></span></span>
+            <span class="mock_base"></span>
+          </a>
+          <a href="#" class="top_works_item mock mock--laptop" style="--a: #9df3c8; --b: #8fdcff" aria-label="制作実績（サンプル）">
+            <span class="mock_screen"><span class="mock_bar"></span></span>
+            <span class="mock_base"></span>
+          </a>
+          <a href="#" class="top_works_item mock mock--laptop" style="--a: #ff8fc0; --b: #c4a8ff" aria-label="制作実績（サンプル）">
+            <span class="mock_screen"><span class="mock_bar"></span></span>
+            <span class="mock_base"></span>
+          </a>
+          <a href="#" class="top_works_item mock mock--phone" style="--a: #8fdcff; --b: #9df3c8" aria-label="制作実績（サンプル）">
+            <span class="mock_screen"><span class="mock_notch"></span></span>
+          </a>
+          <!-- set 2 (duplicate for seamless loop) -->
+          <a href="#" class="top_works_item mock mock--laptop" style="--a: #ff8fc0; --b: #ffc98f" aria-hidden="true" tabindex="-1">
+            <span class="mock_screen"><span class="mock_bar"></span></span>
+            <span class="mock_base"></span>
+          </a>
+          <a href="#" class="top_works_item mock mock--laptop" style="--a: #8fdcff; --b: #c4a8ff" aria-hidden="true" tabindex="-1">
+            <span class="mock_screen"><span class="mock_bar"></span></span>
+            <span class="mock_base"></span>
+          </a>
+          <a href="#" class="top_works_item mock mock--laptop" style="--a: #9cf7c4; --b: #8fdcff" aria-hidden="true" tabindex="-1">
+            <span class="mock_screen"><span class="mock_bar"></span></span>
+            <span class="mock_base"></span>
+          </a>
+          <a href="#" class="top_works_item mock mock--phone" style="--a: #ffc98f; --b: #ff8fc0" aria-hidden="true" tabindex="-1">
+            <span class="mock_screen"><span class="mock_notch"></span></span>
+          </a>
+          <span class="top_works_item mock mock--word" aria-hidden="true"><span>irodori<em>creative</em></span></span>
+          <a href="#" class="top_works_item mock mock--laptop" style="--a: #c4a8ff; --b: #9cf7c4" aria-hidden="true" tabindex="-1">
+            <span class="mock_screen"><span class="mock_bar"></span></span>
+            <span class="mock_base"></span>
+          </a>
+          <a href="#" class="top_works_item mock mock--laptop" style="--a: #9df3c8; --b: #8fdcff" aria-hidden="true" tabindex="-1">
+            <span class="mock_screen"><span class="mock_bar"></span></span>
+            <span class="mock_base"></span>
+          </a>
+          <a href="#" class="top_works_item mock mock--laptop" style="--a: #ff8fc0; --b: #c4a8ff" aria-hidden="true" tabindex="-1">
+            <span class="mock_screen"><span class="mock_bar"></span></span>
+            <span class="mock_base"></span>
+          </a>
+          <a href="#" class="top_works_item mock mock--phone" style="--a: #8fdcff; --b: #9df3c8" aria-hidden="true" tabindex="-1">
+            <span class="mock_screen"><span class="mock_notch"></span></span>
+          </a>
+        </div>
+        <!-- /.top_works_track -->
+      </div>
+      <!-- /.top_kv_slider -->
+
+      <!-- floating contact button (bottom-right, like yoshinani-design) -->
+      <a href="#contact" class="m_contact-float js_contact-float" aria-label="お問い合わせ">
+        <svg class="m_contact-float_ring" viewBox="0 0 100 100" aria-hidden="true">
+          <defs>
+            <path
+              id="contactCirclePath"
+              d="M 50,50 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0"
+            />
+          </defs>
+          <text>
+            <textPath
+              href="#contactCirclePath"
+              xlink:href="#contactCirclePath"
+              startOffset="0"
+              textLength="238.76"
+              lengthAdjust="spacing"
+            >CONTACT ・ CONTACT ・ CONTACT ・ CONTACT ・</textPath>
+          </text>
+        </svg>
+        <span class="m_contact-float_icon" aria-hidden="true">
+          <svg viewBox="0 0 512 512">
+            <path
+              d="M476 3.2L12.5 270.6c-18 10.4-15.4 35.6 3.3 42.6L121 352l287-241c5.5-4.6 13.5 3 8.6 8.6L182 384v65.5c0 20.4 25.2 30.1 39.5 15.6l52-52 88 65.5c17 12.6 41.2 3.3 45.5-17.5L512 32.7C516.9 8.5 494 -6.4 476 3.2z"
+            />
+          </svg>
+        </span>
+      </a>
+      <!-- /.m_contact-float -->
+    </div>
+    <!-- /.top_kv -->
+
+    <main class="l_main">
+      <!-- works slider (directly under KV) : カラー帯の上を端末モックアップが横流れ（teruteru参考） -->
+      <!-- about -->
+      <section id="about" class="top_about">
+        <div class="l_contents">
+          <div class="l_container">
+            <div class="top_about_body">
+              <div class="top_about_head">
+                <p class="m_section-label m_reveal js_reveal">About us</p>
+                <h2 class="m_section-title m_reveal m_reveal__d1 js_reveal">
+                  Webに、<em>彩りを。</em>
+                </h2>
+              </div>
+              <!-- /.top_about_head -->
+              <div class="top_about_txt m_reveal m_reveal__d1 js_reveal">
+                <p class="top_about_lead">
+                  irodori は、「彩り」を意味します。<br />
+                  一つひとつのWebサイトに、彩りを添えるチームです。
+                </p>
+                <p>
+                  デザインだけではサイトは完成しません。技術だけでも、想いは伝わりません。
+                  デザイナーとコーダーがそれぞれの専門性を掛け合わせ、お客様らしさという“色”を大切に、
+                  見る人にも使う人にも心地よいWeb体験を届けます。
+                </p>
+                <p>
+                  企業には、それぞれの個性があります。その個性＝色を引き出す。
+                  一つとして同じ色はありません。それぞれのブランドらしさを、私たちが形にします。
+                </p>
+                <div class="top_about_stats">
+                  <div class="top_about_stat">
+                    <b class="top_about_stat_num js_count" data-to="80">0</b>
+                    <span class="top_about_stat_label">制作実績</span>
+                  </div>
+                  <div class="top_about_stat">
+                    <b class="top_about_stat_num js_count" data-to="2">0</b>
+                    <span class="top_about_stat_label">人チーム</span>
+                  </div>
+                  <div class="top_about_stat">
+                    <b class="top_about_stat_num js_count" data-to="98">0</b>
+                    <span class="top_about_stat_label">継続率 %</span>
+                  </div>
+                </div>
+                <!-- /.top_about_stats -->
+              </div>
+              <!-- /.top_about_txt -->
+            </div>
+            <!-- /.top_about_body -->
+          </div>
+          <!-- /.l_container -->
+        </div>
+        <!-- /.l_contents -->
+      </section>
+      <!-- /.top_about -->
+
+      <!-- members -->
+      <section id="members" class="top_members">
+        <div class="l_contents">
+          <div class="l_container">
+            <p class="m_section-label m_reveal js_reveal">Members</p>
+            <h2 class="m_section-title m_reveal m_reveal__d1 js_reveal">
+              2人の<em>チーム</em>
+            </h2>
+            <div class="top_members_list">
+              <article class="top_members_item m_reveal m_reveal__d1 js_reveal">
+                <div class="top_members_item_photo" style="--a: #ff6fae; --b: #ffb36f">
+                  <span>D</span>
+                </div>
+                <div class="top_members_item_body">
+                  <p class="top_members_item_role">Designer / Art Director</p>
+                  <h3 class="top_members_item_name">
+                    Designer<span class="top_members_item_name-jp">デザイン担当</span>
+                  </h3>
+                  <p class="top_members_item_desc">
+                    ブランドの世界観を設計し、UI・アートディレクションを担当。「らしさ」を細部まで宿したビジュアルを追求します。
+                  </p>
+                  <ul class="top_members_item_skill">
+                    <li>Art Direction</li>
+                    <li>UI / UX</li>
+                    <li>Branding</li>
+                  </ul>
+                </div>
+                <!-- /.top_members_item_body -->
+              </article>
+              <!-- /.top_members_item -->
+              <article class="top_members_item m_reveal m_reveal__d2 js_reveal">
+                <div class="top_members_item_photo top_members_item_photo__img" style="--a: #6fd3ff; --b: #a98cff">
+                  <img class="top_members_item_photo_img" src="img/member-coder.jpg" alt="コーダー" />
+                </div>
+                <div class="top_members_item_body">
+                  <p class="top_members_item_role">Coder / Frontend Engineer</p>
+                  <h3 class="top_members_item_name">
+                    Coder<span class="top_members_item_name-jp">実装担当</span>
+                  </h3>
+                  <p class="top_members_item_desc">
+                    デザインの意図を1px単位で再現する実装を担当。表現力のあるアニメーションと、速く堅牢なフロントを構築します。
+                  </p>
+                  <ul class="top_members_item_skill">
+                    <li>Frontend</li>
+                    <li>Animation</li>
+                    <li>WordPress</li>
+                  </ul>
+                </div>
+                <!-- /.top_members_item_body -->
+              </article>
+              <!-- /.top_members_item -->
+            </div>
+            <!-- /.top_members_list -->
+          </div>
+          <!-- /.l_container -->
+        </div>
+        <!-- /.l_contents -->
+      </section>
+      <!-- /.top_members -->
+
+      <!-- service -->
+      <section id="service" class="top_service">
+        <div class="l_contents">
+          <div class="l_container">
+            <p class="m_section-label m_reveal js_reveal">Service</p>
+            <h2 class="m_section-title m_reveal m_reveal__d1 js_reveal">
+              できる<em>こと</em>
+            </h2>
+            <ul class="top_service_list">
+              <li class="top_service_item m_reveal m_reveal__d1 js_reveal">
+                <span class="top_service_item_no">01</span>
+                <h3 class="top_service_item_name">Web Design</h3>
+                <p class="top_service_item_desc">
+                  ブランドの世界観を体験へ翻訳。細部まで作り込んだビジュアルと、使いやすさを両立したデザインをつくります。
+                </p>
+              </li>
+              <!-- /.top_service_item -->
+              <li class="top_service_item m_reveal m_reveal__d2 js_reveal">
+                <span class="top_service_item_no">02</span>
+                <h3 class="top_service_item_name">Development</h3>
+                <p class="top_service_item_desc">
+                  デザインの意図を損なわない高品質な実装。動きのある表現と、速く堅牢なフロントエンドを構築します。
+                </p>
+              </li>
+              <!-- /.top_service_item -->
+              <li class="top_service_item m_reveal m_reveal__d3 js_reveal">
+                <span class="top_service_item_no">03</span>
+                <h3 class="top_service_item_name">Branding</h3>
+                <p class="top_service_item_desc">
+                  ロゴやトーン&amp;マナーからコピーまで、一貫した世界観を設計。Webを起点にブランド体験を整えます。
+                </p>
+              </li>
+              <!-- /.top_service_item -->
+              <li class="top_service_item m_reveal m_reveal__d4 js_reveal">
+                <span class="top_service_item_no">04</span>
+                <h3 class="top_service_item_name">CMS / 運用</h3>
+                <p class="top_service_item_desc">
+                  WordPressをはじめとしたCMS構築や、公開後の更新・保守まで。長期的に伴走します。
+                </p>
+              </li>
+              <!-- /.top_service_item -->
+            </ul>
+            <!-- /.top_service_list -->
+            <div class="m_btn-wrapper top_service_more m_reveal js_reveal">
+              <a href="service.html" class="m_btn m_btn__ghost">サービス詳細を見る →</a>
+            </div>
+            <!-- /.top_service_more -->
+          </div>
+          <!-- /.l_container -->
+        </div>
+        <!-- /.l_contents -->
+      </section>
+      <!-- /.top_service -->
+
+      <!-- flow -->
+      <section id="flow" class="top_flow">
+        <div class="l_contents">
+          <div class="l_container">
+            <p class="m_section-label m_reveal js_reveal">Flow</p>
+            <h2 class="m_section-title m_reveal m_reveal__d1 js_reveal">
+              制作の<em>流れ</em>
+            </h2>
+            <div class="top_flow_list">
+              <div class="top_flow_item m_reveal m_reveal__d1 js_reveal">
+                <span class="top_flow_item_no">01</span>
+                <div class="top_flow_item_txt">
+                  <h3 class="top_flow_item_heading">お問い合わせ・ヒアリング</h3>
+                  <p class="top_flow_item_desc">
+                    目的・課題・ご予算・納期をお伺いし、方向性をすり合わせます。
+                  </p>
+                </div>
+              </div>
+              <!-- /.top_flow_item -->
+              <div class="top_flow_item m_reveal m_reveal__d2 js_reveal">
+                <span class="top_flow_item_no">02</span>
+                <div class="top_flow_item_txt">
+                  <h3 class="top_flow_item_heading">ご提案・お見積もり</h3>
+                  <p class="top_flow_item_desc">
+                    設計と全体方針をご提案。内容にご納得いただいたうえで契約します。
+                  </p>
+                </div>
+              </div>
+              <!-- /.top_flow_item -->
+              <div class="top_flow_item m_reveal m_reveal__d3 js_reveal">
+                <span class="top_flow_item_no">03</span>
+                <div class="top_flow_item_txt">
+                  <h3 class="top_flow_item_heading">デザイン・実装</h3>
+                  <p class="top_flow_item_desc">
+                    デザインから実装まで、進捗を共有しながら丁寧に制作を進めます。
+                  </p>
+                </div>
+              </div>
+              <!-- /.top_flow_item -->
+              <div class="top_flow_item m_reveal m_reveal__d4 js_reveal">
+                <span class="top_flow_item_no">04</span>
+                <div class="top_flow_item_txt">
+                  <h3 class="top_flow_item_heading">公開・運用</h3>
+                  <p class="top_flow_item_desc">
+                    公開後の更新・保守や追加施策まで、長期的に伴走します。
+                  </p>
+                </div>
+              </div>
+              <!-- /.top_flow_item -->
+            </div>
+            <!-- /.top_flow_list -->
+          </div>
+          <!-- /.l_container -->
+        </div>
+        <!-- /.l_contents -->
+      </section>
+      <!-- /.top_flow -->
+
+      <!-- faq -->
+      <section id="faq" class="top_faq">
+        <div class="l_contents">
+          <div class="l_container">
+            <p class="m_section-label m_reveal js_reveal">FAQ</p>
+            <h2 class="m_section-title m_reveal m_reveal__d1 js_reveal">
+              よくある<em>ご質問</em>
+            </h2>
+            <div class="top_faq_list m_reveal m_reveal__d1 js_reveal">
+              <div class="top_faq_item js_faq">
+                <button class="top_faq_q">
+                  どんなジャンルのサイトでも制作できますか？
+                  <i class="top_faq_icon"></i>
+                </button>
+                <div class="top_faq_a">
+                  <p>
+                    コーポレート・採用・ブランド・LP・ECなど、幅広いジャンルに対応しています。まずはご相談ください。ジャンルによっては得意な事例をご紹介します。
+                  </p>
+                </div>
+                <!-- /.top_faq_a -->
+              </div>
+              <!-- /.top_faq_item -->
+              <div class="top_faq_item js_faq">
+                <button class="top_faq_q">
+                  写真素材は用意する必要がありますか？
+                  <i class="top_faq_icon"></i>
+                </button>
+                <div class="top_faq_a">
+                  <p>
+                    お持ちの素材があればご活用いただけますが、ない場合はストックフォトのご提案や、撮影ディレクションのご相談も可能です。
+                  </p>
+                </div>
+                <!-- /.top_faq_a -->
+              </div>
+              <!-- /.top_faq_item -->
+              <div class="top_faq_item js_faq">
+                <button class="top_faq_q">
+                  原稿はすべて用意する必要がありますか？
+                  <i class="top_faq_icon"></i>
+                </button>
+                <div class="top_faq_a">
+                  <p>
+                    いいえ。ラフなメモや箇条書きからでも大丈夫です。ヒアリングをもとに、構成やコピーの作成もお手伝いできます。
+                  </p>
+                </div>
+                <!-- /.top_faq_a -->
+              </div>
+              <!-- /.top_faq_item -->
+              <div class="top_faq_item js_faq">
+                <button class="top_faq_q">
+                  既存サイトの修正や更新もお願いできますか？
+                  <i class="top_faq_icon"></i>
+                </button>
+                <div class="top_faq_a">
+                  <p>
+                    はい。部分的な修正・リニューアル・運用代行にも対応しています。現状のサイトを拝見したうえでご提案します。
+                  </p>
+                </div>
+                <!-- /.top_faq_a -->
+              </div>
+              <!-- /.top_faq_item -->
+              <div class="top_faq_item js_faq">
+                <button class="top_faq_q">
+                  急ぎの相談にも対応してもらえますか？
+                  <i class="top_faq_icon"></i>
+                </button>
+                <div class="top_faq_a">
+                  <p>
+                    スケジュールの状況によりますが、可能な限り柔軟に対応します。納期がお決まりの場合は、まずお早めにご連絡ください。
+                  </p>
+                </div>
+                <!-- /.top_faq_a -->
+              </div>
+              <!-- /.top_faq_item -->
+              <div class="top_faq_item js_faq">
+                <button class="top_faq_q">
+                  遠方からでも依頼できますか？
+                  <i class="top_faq_icon"></i>
+                </button>
+                <div class="top_faq_a">
+                  <p>
+                    もちろんです。オンラインでの打ち合わせが中心のため、全国どこからでもご依頼いただけます。
+                  </p>
+                </div>
+                <!-- /.top_faq_a -->
+              </div>
+              <!-- /.top_faq_item -->
+              <div class="top_faq_item js_faq">
+                <button class="top_faq_q">
+                  ドメインやサーバーのことが分からなくても大丈夫ですか？
+                  <i class="top_faq_icon"></i>
+                </button>
+                <div class="top_faq_a">
+                  <p>
+                    ご安心ください。取得・設定・公開まわりまで、専門用語をかみ砕いてご案内・代行します。
+                  </p>
+                </div>
+                <!-- /.top_faq_a -->
+              </div>
+              <!-- /.top_faq_item -->
+              <div class="top_faq_item js_faq">
+                <button class="top_faq_q">
+                  WordPressにも対応していますか？
+                  <i class="top_faq_icon"></i>
+                </button>
+                <div class="top_faq_a">
+                  <p>
+                    はい。WordPressでの構築や、お客様ご自身で更新できるCMS化にも対応しています。
+                  </p>
+                </div>
+                <!-- /.top_faq_a -->
+              </div>
+              <!-- /.top_faq_item -->
+              <div class="top_faq_item js_faq">
+                <button class="top_faq_q">
+                  制作後の保守・運用もお願いできますか？
+                  <i class="top_faq_icon"></i>
+                </button>
+                <div class="top_faq_a">
+                  <p>
+                    はい。更新代行・軽微な修正・保守プランなど、公開後も継続的にサポートいたします。
+                  </p>
+                </div>
+                <!-- /.top_faq_a -->
+              </div>
+              <!-- /.top_faq_item -->
+            </div>
+            <!-- /.top_faq_list -->
+          </div>
+          <!-- /.l_container -->
+        </div>
+        <!-- /.l_contents -->
+      </section>
+      <!-- /.top_faq -->
+    </main>
+    <!-- /.l_main -->
+
+    <!-- contact -->
+    <section id="contact" class="top_contact">
+      <div class="l_contents">
+        <div class="top_contact_box l_container-sm">
+          <p class="m_section-label m_section-label__center m_reveal js_reveal">
+            Contact
+          </p>
+          <h2 class="top_contact_copy m_reveal m_reveal__d1 js_reveal">
+            「何を依頼すればいいか<br />分からない」<em>でも大丈夫。</em>
+          </h2>
+          <p class="top_contact_desc m_reveal m_reveal__d2 js_reveal">
+            お客様のお話を伺いながら、課題や目的を整理し、最適なご提案をいたします。<br />
+            まずはお気軽にご相談ください。
+          </p>
+          <div class="m_subsidy top_contact_subsidy m_reveal m_reveal__d2 js_reveal">
+            <p class="m_subsidy_label">補助金について</p>
+            <p class="m_subsidy_txt">
+              ホームページ制作をご検討の方へ。小規模事業者持続化補助金などをご利用いただける場合があります。事業内容や公募時期によって対象となるか異なりますので、お気軽にご相談ください。
+            </p>
+          </div>
+          <!-- /.m_subsidy -->
+          <div class="m_btn-wrapper top_contact_btn-wrapper m_reveal m_reveal__d3 js_reveal">
+            <a href="mailto:hello@irodori.example" class="m_btn m_btn__fill">
+              お問い合わせはこちら →
+            </a>
+          </div>
+          <!-- /.m_btn-wrapper -->
+        </div>
+        <!-- /.top_contact_box -->
+      </div>
+      <!-- /.l_contents -->
+    </section>
+    <!-- /.top_contact -->
+
+    <footer class="l_footer">
+      <div class="l_footer_contents l_container">
+        <p class="l_footer-logo"><img class="l_footer-logo_img" src="img/irodori-logo.png" alt="irodori" /></p>
+        <nav class="l_footer-nav" aria-label="フッターメニュー">
+          <ul class="l_footer-nav_list">
+            <li class="l_footer-nav_item">
+              <a href="#about" class="l_footer-nav_link">About</a>
+            </li>
+            <li class="l_footer-nav_item">
+              <a href="#members" class="l_footer-nav_link">Members</a>
+            </li>
+            <li class="l_footer-nav_item">
+              <a href="service.html" class="l_footer-nav_link">Service</a>
+            </li>
+            <li class="l_footer-nav_item">
+              <a href="#works" class="l_footer-nav_link">Works</a>
+            </li>
+            <li class="l_footer-nav_item">
+              <a href="#faq" class="l_footer-nav_link">FAQ</a>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.l_footer-nav -->
+      </div>
+      <!-- /.l_footer_contents -->
+      <p class="l_footer-copyright">
+        <small class="l_footer-copyright_txt">© 2026 irodori</small>
+      </p>
+    </footer>
+    <!-- /.l_footer -->
+  </body>
+</html>

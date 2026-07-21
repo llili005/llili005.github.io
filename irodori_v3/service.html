@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Service｜作りたいものから選ぶ | irodori</title>
+    <meta
+      name="description"
+      content="irodori のサービス一覧。コーポレート・採用・ブランド・EC・WordPress・ブランディングまで、作りたいものから選べます。"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- ogp -->
+    <meta property="og:site_name" content="irodori" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Service｜作りたいものから選ぶ | irodori" />
+    <meta
+      property="og:description"
+      content="コーポレート・採用・ブランド・EC・WordPress・ブランディングまで、作りたいものから選べる irodori のサービス。"
+    />
+    <meta property="og:locale" content="ja_JP" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Parisienne&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- js -->
+    <script src="js/main.js" defer></script>
+  </head>
+  <body class="js_body">
+    <!-- iridescent haze background -->
+    <div class="l_bg">
+      <canvas class="l_bg_canvas js_gl"></canvas>
+      <div class="l_bg_grid"></div>
+      <div class="l_bg_vignette"></div>
+      <div class="l_bg_grain"></div>
+    </div>
+    <!-- /.l_bg -->
+
+    <!-- opening / loader -->
+    <div class="m_opening js_opening">
+      <div class="m_opening_logo"><img class="m_opening_logo_img" src="img/irodori.png" alt="irodori" /></div>
+      <div class="m_opening_bar"><i class="m_opening_bar-inner"></i></div>
+    </div>
+    <!-- /.m_opening -->
+
+    <header class="l_header js_header">
+      <a href="index.html#top" class="l_header-logo"><img class="l_header-logo_img" src="img/irodori.png" alt="irodori" /></a>
+      <nav class="l_header-nav js_nav" aria-label="メインメニュー">
+        <ul class="l_header-nav_list">
+          <li class="l_header-nav_item">
+            <a href="index.html#about" class="l_header-nav_link">About</a>
+          </li>
+          <li class="l_header-nav_item">
+            <a href="index.html#members" class="l_header-nav_link">Members</a>
+          </li>
+          <li class="l_header-nav_item l_header-nav_item__sub">
+            <a href="service.html" class="l_header-nav_link">Service</a>
+            <ul class="l_header-nav_sub">
+              <li class="l_header-nav_sub_item">
+                <a href="service.html" class="l_header-nav_sub_link">
+                  作りたいものから選ぶ
+                </a>
+              </li>
+              <li class="l_header-nav_sub_item">
+                <a href="service_issue.html" class="l_header-nav_sub_link">
+                  課題から選ぶ
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="l_header-nav_item">
+            <a href="index.html#works" class="l_header-nav_link">Works</a>
+          </li>
+          <li class="l_header-nav_item">
+            <a href="index.html#faq" class="l_header-nav_link">FAQ</a>
+          </li>
+          <li class="l_header-nav_item">
+            <a href="index.html#contact" class="l_header-nav_link l_header-nav_link__cta">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <button class="m_hamburger js_hamburger" aria-label="メニュー">
+        <span class="m_hamburger-bar"></span>
+        <span class="m_hamburger-bar"></span>
+      </button>
+    </header>
+    <!-- /.l_header -->
+
+    <main class="l_main">
+      <div class="service_wrap">
+        <!-- 左：固定ナビ（インデックス） -->
+        <aside class="service_nav">
+          <div class="service_switch">
+            <a href="service.html" class="service_switch_link is-active">作りたいものから選ぶ</a>
+            <a href="service_issue.html" class="service_switch_link">課題から選ぶ</a>
+          </div>
+          <p class="m_section-label service_nav_label">Service</p>
+          <ul class="service_nav_list">
+            <li>
+              <a href="#s01" class="service_nav_link is-active">
+                <span class="service_nav_no">01</span>会社の公式サイト
+              </a>
+            </li>
+            <li>
+              <a href="#s02" class="service_nav_link">
+                <span class="service_nav_no">02</span>採用サイト
+              </a>
+            </li>
+            <li>
+              <a href="#s03" class="service_nav_link">
+                <span class="service_nav_no">03</span>1ページ紹介・LP
+              </a>
+            </li>
+            <li>
+              <a href="#s04" class="service_nav_link">
+                <span class="service_nav_no">04</span>自分で更新できるサイト
+              </a>
+            </li>
+            <li>
+              <a href="#s05" class="service_nav_link">
+                <span class="service_nav_no">05</span>ロゴ・見た目づくり
+              </a>
+            </li>
+            <!-- ECサイトは現在対応していないため一時的に非表示。再開時はこの<li>を有効化し、番号を調整してください
+            <li>
+              <a href="#sEC" class="service_nav_link">
+                <span class="service_nav_no">--</span>ネットショップ(EC)
+              </a>
+            </li>
+            -->
+          </ul>
+          <a href="index.html#contact" class="m_btn m_btn__fill service_nav_cta">
+            お問い合わせ →
+          </a>
+        </aside>
+        <!-- /.service_nav -->
+
+        <!-- 右：スクロールする本文 -->
+        <div class="service_body">
+          <header class="service_head m_reveal js_reveal">
+            <p class="m_section-label">Service</p>
+            <h1 class="service_head_title">
+              作りたいものから、<em>選ぶ。</em>
+            </h1>
+            <p class="service_head_desc">
+              「何を頼めばいいか分からない」でも大丈夫。作りたいものに近いものを選ぶだけでOKです。
+              あとは私たちがお話を伺いながら、ぴったりの形を一緒に決めていきます。
+            </p>
+            <p class="service_note">
+              ※料金・期間はおおよその目安です。ページ数やご要望に応じて、ご予算に合わせてご相談いただけます。
+            </p>
+            <div class="m_subsidy m_reveal js_reveal">
+              <p class="m_subsidy_label">補助金について</p>
+              <p class="m_subsidy_txt">
+                ホームページ制作をご検討の方へ。小規模事業者持続化補助金などをご利用いただける場合があります。事業内容や公募時期によって対象となるか異なりますので、お気軽にご相談ください。
+              </p>
+            </div>
+            <!-- /.m_subsidy -->
+          </header>
+          <!-- /.service_head -->
+
+          <div class="service_list">
+            <!-- 01 -->
+            <section id="s01" class="service_item m_reveal js_reveal">
+              <span class="service_item_no">01</span>
+              <h2 class="service_item_name">会社の公式サイト</h2>
+              <p class="service_item_en">Corporate Site</p>
+              <p class="service_item_for">
+                <b>こんな方に</b>会社の信頼感を高めたい／名刺やパンフの代わりになるサイトが欲しい
+              </p>
+              <p class="service_item_lead">
+                会社のことを、はじめて知る人にも分かりやすく伝えるサイトです。事業内容・実績・想いをまとめ、「ちゃんとした会社だな」と感じてもらえる状態をつくります。
+              </p>
+              <ul class="service_item_inc">
+                <li>会社紹介ページ</li>
+                <li>お問い合わせフォーム</li>
+                <li>スマホ対応</li>
+                <li>検索で見つけてもらう対策（SEO）</li>
+              </ul>
+              <div class="service_item_meta">
+                <div>
+                  <span class="service_item_meta_term">料金</span>
+                  <span class="service_item_meta_data">40万円〜</span>
+                </div>
+                <div>
+                  <span class="service_item_meta_term">期間</span>
+                  <span class="service_item_meta_data">約1.5〜3ヶ月</span>
+                </div>
+              </div>
+            </section>
+            <!-- /#s01 -->
+
+            <!-- 02 -->
+            <section id="s02" class="service_item m_reveal js_reveal">
+              <span class="service_item_no">02</span>
+              <h2 class="service_item_name">採用サイト</h2>
+              <p class="service_item_en">Recruit Site</p>
+              <p class="service_item_for">
+                <b>こんな方に</b>応募を増やしたい／働く魅力をきちんと伝えたい
+              </p>
+              <p class="service_item_lead">
+                「ここで働きたい」と思ってもらうためのサイトです。社員の声や職場の雰囲気を伝え、応募につながる流れをつくります。
+              </p>
+              <ul class="service_item_inc">
+                <li>社員インタビュー</li>
+                <li>仕事紹介</li>
+                <li>応募フォーム</li>
+                <li>スマホ対応</li>
+              </ul>
+              <div class="service_item_meta">
+                <div>
+                  <span class="service_item_meta_term">料金</span>
+                  <span class="service_item_meta_data">50万円〜</span>
+                </div>
+                <div>
+                  <span class="service_item_meta_term">期間</span>
+                  <span class="service_item_meta_data">約2〜3ヶ月</span>
+                </div>
+              </div>
+            </section>
+            <!-- /#s02 -->
+
+            <!-- 03 -->
+            <section id="s03" class="service_item m_reveal js_reveal">
+              <span class="service_item_no">03</span>
+              <h2 class="service_item_name">1ページ紹介・LP</h2>
+              <p class="service_item_en">Landing Page</p>
+              <p class="service_item_for">
+                <b>こんな方に</b>商品やサービスを1ページでしっかり紹介したい／キャンペーンに使いたい
+              </p>
+              <p class="service_item_lead">
+                伝えたいことを1枚のページにまとめた、印象に残る紹介ページです。写真や動きを活かして、商品・サービスの魅力をぐっと伝えます。
+              </p>
+              <ul class="service_item_inc">
+                <li>1ページ構成</li>
+                <li>写真・動きのある表現</li>
+                <li>お問い合わせ導線</li>
+                <li>効果の計測</li>
+              </ul>
+              <div class="service_item_meta">
+                <div>
+                  <span class="service_item_meta_term">料金</span>
+                  <span class="service_item_meta_data">30万円〜</span>
+                </div>
+                <div>
+                  <span class="service_item_meta_term">期間</span>
+                  <span class="service_item_meta_data">約1〜2ヶ月</span>
+                </div>
+              </div>
+            </section>
+            <!-- /#s03 -->
+
+            <!-- 04 -->
+            <section id="s04" class="service_item m_reveal js_reveal">
+              <span class="service_item_no">04</span>
+              <h2 class="service_item_name">自分で更新できるサイト</h2>
+              <p class="service_item_en">WordPress / CMS</p>
+              <p class="service_item_for">
+                <b>こんな方に</b>お知らせやブログを自分たちで更新したい／更新のたびに頼むのをやめたい
+              </p>
+              <p class="service_item_lead">
+                公開したあとに、社内でかんたんに更新できるサイトです。専門知識がなくても、文章や写真を差し替えられる仕組みを整えます。
+              </p>
+              <ul class="service_item_inc">
+                <li>自分で更新できる仕組み</li>
+                <li>使い方マニュアル</li>
+                <li>スマホ対応</li>
+                <li>公開後のサポート</li>
+              </ul>
+              <div class="service_item_meta">
+                <div>
+                  <span class="service_item_meta_term">料金</span>
+                  <span class="service_item_meta_data">45万円〜</span>
+                </div>
+                <div>
+                  <span class="service_item_meta_term">期間</span>
+                  <span class="service_item_meta_data">約1.5〜3ヶ月</span>
+                </div>
+              </div>
+            </section>
+            <!-- /#s04 -->
+
+            <!-- 05 -->
+            <section id="s05" class="service_item m_reveal js_reveal">
+              <span class="service_item_no">05</span>
+              <h2 class="service_item_name">ロゴ・見た目づくり</h2>
+              <p class="service_item_en">Logo / Branding</p>
+              <p class="service_item_for">
+                <b>こんな方に</b>ロゴや色味を整えたい／全体の印象を統一したい
+              </p>
+              <p class="service_item_lead">
+                ロゴや色・文字など、会社の「見た目の軸」をつくります。Webだけでなく、名刺やSNSでも一貫した印象を届けられるようにします。
+              </p>
+              <ul class="service_item_inc">
+                <li>ロゴ</li>
+                <li>色・文字の設計</li>
+                <li>使い方ルール（ガイドライン）</li>
+                <li>ヒアリング</li>
+              </ul>
+              <div class="service_item_meta">
+                <div>
+                  <span class="service_item_meta_term">料金</span>
+                  <span class="service_item_meta_data">35万円〜</span>
+                </div>
+                <div>
+                  <span class="service_item_meta_term">期間</span>
+                  <span class="service_item_meta_data">約1〜2.5ヶ月</span>
+                </div>
+              </div>
+            </section>
+            <!-- /#s05 -->
+
+            <!-- ECサイト（ネットショップ）は現在対応していないため一時的に非表示。
+                 再開する場合はこの section のコメントを外し、id を sEC → s06 などに整え、
+                 上の左ナビの EC 項目も有効化してください。
+            <section id="sEC" class="service_item m_reveal js_reveal">
+              <span class="service_item_no">06</span>
+              <h2 class="service_item_name">ネットショップ（EC）</h2>
+              <p class="service_item_en">E-Commerce</p>
+              <p class="service_item_for">
+                <b>こんな方に</b>ネットで商品を販売したい／かんたんに注文を受けたい
+              </p>
+              <p class="service_item_lead">
+                商品をネットで販売できるお店をつくります。注文・支払い・配送までを、無理なく運用できる形で整えます。
+              </p>
+              <ul class="service_item_inc">
+                <li>ネットショップ構築</li>
+                <li>支払い・配送の設定</li>
+                <li>スマホ対応</li>
+                <li>運用レクチャー</li>
+              </ul>
+              <div class="service_item_meta">
+                <div>
+                  <span class="service_item_meta_term">料金</span>
+                  <span class="service_item_meta_data">60万円〜</span>
+                </div>
+                <div>
+                  <span class="service_item_meta_term">期間</span>
+                  <span class="service_item_meta_data">約2〜3.5ヶ月</span>
+                </div>
+              </div>
+            </section>
+            -->
+          </div>
+          <!-- /.service_list -->
+        </div>
+        <!-- /.service_body -->
+      </div>
+      <!-- /.service_wrap -->
+    </main>
+    <!-- /.l_main -->
+
+    <!-- floating contact button (bottom-right, like yoshinani-design) -->
+    <a href="index.html#contact" class="m_contact-float js_contact-float" aria-label="お問い合わせ">
+      <svg class="m_contact-float_ring" viewBox="0 0 100 100" aria-hidden="true">
+        <defs>
+          <path
+            id="contactCirclePath"
+            d="M 50,50 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0"
+          />
+        </defs>
+        <text>
+          <textPath
+            href="#contactCirclePath"
+            xlink:href="#contactCirclePath"
+            startOffset="0"
+            textLength="238.76"
+            lengthAdjust="spacing"
+          >CONTACT ・ CONTACT ・ CONTACT ・ CONTACT ・</textPath>
+        </text>
+      </svg>
+      <span class="m_contact-float_icon" aria-hidden="true">
+        <svg viewBox="0 0 512 512">
+          <path
+            d="M476 3.2L12.5 270.6c-18 10.4-15.4 35.6 3.3 42.6L121 352l287-241c5.5-4.6 13.5 3 8.6 8.6L182 384v65.5c0 20.4 25.2 30.1 39.5 15.6l52-52 88 65.5c17 12.6 41.2 3.3 45.5-17.5L512 32.7C516.9 8.5 494 -6.4 476 3.2z"
+          />
+        </svg>
+      </span>
+    </a>
+    <!-- /.m_contact-float -->
+
+    <footer class="l_footer">
+      <div class="l_footer_contents l_container">
+        <p class="l_footer-logo"><img class="l_footer-logo_img" src="img/irodori.png" alt="irodori" /></p>
+        <nav class="l_footer-nav" aria-label="フッターメニュー">
+          <ul class="l_footer-nav_list">
+            <li class="l_footer-nav_item">
+              <a href="index.html#about" class="l_footer-nav_link">About</a>
+            </li>
+            <li class="l_footer-nav_item">
+              <a href="index.html#members" class="l_footer-nav_link">Members</a>
+            </li>
+            <li class="l_footer-nav_item">
+              <a href="service.html" class="l_footer-nav_link">Service</a>
+            </li>
+            <li class="l_footer-nav_item">
+              <a href="index.html#works" class="l_footer-nav_link">Works</a>
+            </li>
+            <li class="l_footer-nav_item">
+              <a href="index.html#faq" class="l_footer-nav_link">FAQ</a>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.l_footer-nav -->
+      </div>
+      <!-- /.l_footer_contents -->
+      <p class="l_footer-copyright">
+        <small class="l_footer-copyright_txt">© 2026 irodori</small>
+      </p>
+    </footer>
+    <!-- /.l_footer -->
+  </body>
+</html>
