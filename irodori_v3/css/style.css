@@ -900,6 +900,14 @@ img {
   .top_kv_btn-wrapper {
     justify-content: flex-start;
   }
+  /* サブコピーはピル装飾を外し、本文と同じ左ラインに揃える */
+  .top_kv_sub-copy {
+    padding: 0;
+    background: transparent;
+  }
+  .top_kv_sub-copy .top_kv_dot {
+    display: none;
+  }
 }
 
 .top_kv-scroll-down {
@@ -980,13 +988,12 @@ img {
 }
 
 /* SP : native horizontal scroll (JS drives auto-slide) */
+/* PC・SP共通で自動マーキー（端はフェード） */
 .top_works_slider {
   margin-top: auto;
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: none;
-  touch-action: pan-x;
+  overflow: hidden;
+  -webkit-mask: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
 }
 
 .top_works_slider::-webkit-scrollbar {
@@ -999,6 +1006,7 @@ img {
   gap: clamp(26px, 3.4vw, 52px);
   width: max-content;
   padding: 20px 24px 10px;
+  animation: works-slide 60s linear infinite;
 }
 
 /* --- 端末モックアップ共通 --- */
@@ -1122,7 +1130,8 @@ img {
 
 @keyframes works-slide {
   to {
-    transform: translateX(calc(-50% - 12px));
+    /* 1セット分ぴったり流す（-50% ＋ 連結ギャップの半分を補正） */
+    transform: translateX(calc(-50% - clamp(13px, 1.7vw, 26px)));
   }
 }
 
@@ -1945,16 +1954,10 @@ img {
     background: var(--glass-color02);
   }
 
-  /* works : auto marquee + edge fade (JS auto-scroll is SP only) */
-  .top_works_slider {
-    overflow: hidden;
-    -webkit-mask: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
-    mask: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
-  }
-
+  /* works : PCは左右の余白を広めに（マーキー自体は共通指定） */
   .top_works_track {
     padding: 20px clamp(20px, 5vw, 60px) 10px;
-    animation: works-slide 46s linear infinite;
+    animation-duration: 46s;
   }
 
   /* about / members / service : 2 column */
