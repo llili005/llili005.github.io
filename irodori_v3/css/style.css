@@ -5,20 +5,20 @@
   --white-color: #fff;
   --ink-color: #1a1a1a;
   --ink-dim-color: #616161;
-  --accent-color: #f84f65;
-  --line-color: rgba(20, 20, 30, 0.1);
+  --accent-color: #810303;
+  --line-color: rgba(20, 20, 20, 0.1);
   --glass-color: rgba(255, 255, 255, 0.55);
   --glass-color02: rgba(255, 255, 255, 0.75);
-  /* 淡いパステルの虹（サムネ・帯用） */
+  /* 淡いグレーのグラデーション（サムネ・帯用） */
   --grad: linear-gradient(
     90deg,
-    #ff8fc0,
-    #ffc98f,
-    #fff08f,
-    #9cf7c4,
-    #8fdcff,
-    #c4a8ff,
-    #ff8fc0
+    #b6b6b6,
+    #d3d3d3,
+    #e9e9e9,
+    #d6d6d6,
+    #c9c9c9,
+    #bababa,
+    #b6b6b6
   );
 }
 
@@ -104,8 +104,8 @@ img {
   pointer-events: none;
   opacity: 0.42;
   background-image:
-    linear-gradient(rgba(20, 20, 30, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(20, 20, 30, 0.055) 1px, transparent 1px);
+    linear-gradient(rgba(20, 20, 20, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 20, 20, 0.055) 1px, transparent 1px);
   background-size: 74px 74px;
   background-position: center;
 }
@@ -467,7 +467,7 @@ img {
 
 .m_btn__fill:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 34px rgba(20, 20, 40, 0.22);
+  box-shadow: 0 12px 34px rgba(20, 20, 20, 0.22);
 }
 
 .m_btn__ghost {
@@ -477,7 +477,7 @@ img {
 }
 
 .m_btn__ghost:hover {
-  border-color: rgba(20, 20, 30, 0.3);
+  border-color: rgba(20, 20, 20, 0.3);
   transform: translateY(-2px);
 }
 
@@ -493,7 +493,7 @@ img {
   place-content: center;
   border-radius: 50%;
   /* 淡いコーラルの半透明リング地 */
-  background: rgba(248, 79, 101, 0.13);
+  background: rgba(129, 3, 3, 0.13);
   /* 既定は非表示。JS が is-shown を付けたときだけ表示（SP は FV 通過後） */
   opacity: 0;
   visibility: hidden;
@@ -513,7 +513,7 @@ img {
   inset: 21%;
   border-radius: 50%;
   background: var(--white-color);
-  box-shadow: 0 8px 26px rgba(20, 20, 40, 0.08);
+  box-shadow: 0 8px 26px rgba(20, 20, 20, 0.08);
 }
 
 .m_contact-float.is-shown {
@@ -524,7 +524,7 @@ img {
 }
 
 .m_contact-float.is-shown:hover {
-  background: rgba(248, 79, 101, 0.22);
+  background: rgba(129, 3, 3, 0.22);
   transform: scale(1.05);
 }
 
@@ -608,9 +608,9 @@ img {
 .m_subsidy {
   margin-top: 20px;
   padding: 18px 20px;
-  border: 1px solid rgba(248, 79, 101, 0.28);
+  border: 1px solid rgba(129, 3, 3, 0.28);
   border-radius: 14px;
-  background: rgba(248, 79, 101, 0.07);
+  background: rgba(129, 3, 3, 0.07);
   text-align: left;
 }
 
@@ -764,7 +764,7 @@ img {
   }
 }
 
-/* 差し色の黄色いきらめき（波の上・中央右あたり） */
+/* 差し色のきらめき（波の上・中央右あたり） */
 .top_kv_bg_sparkle {
   position: absolute;
   top: 42%;
@@ -772,9 +772,9 @@ img {
   z-index: 2;
   width: clamp(48px, 6vw, 100px);
   aspect-ratio: 1;
-  background: #ffe36b;
+  background: var(--accent-color);
   clip-path: polygon(50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50%, 40% 40%);
-  filter: drop-shadow(0 0 14px rgba(255, 220, 100, 0.55));
+  filter: drop-shadow(0 0 14px rgba(129, 3, 3, 0.55));
   animation: kv-sparkle 4.5s ease-in-out infinite;
 }
 
@@ -955,14 +955,14 @@ img {
 }
 
 /* ---------- top : works ---------- */
-/* カラーのグラデ帯（FVパレット準拠）の上を端末モックアップが横流れ */
+/* グレーのグラデ帯の上を端末モックアップが横流れ */
 .top_works {
   position: relative;
   overflow: hidden;
   padding: clamp(34px, 5vw, 60px) 0 clamp(40px, 6vw, 76px);
   background:
     radial-gradient(120% 80% at 15% 0%, rgba(255, 255, 255, 0.22), transparent 55%),
-    linear-gradient(115deg, #4fd9c0, #4bb8f5 42%, #7c9cff 72%, #a98bff);
+    linear-gradient(115deg, #b5b5b5, #a8a8a8 42%, #9c9c9c 72%, #8f8f8f);
 }
 
 .top_works_head {
@@ -1011,29 +1011,43 @@ img {
 
 /* --- 端末モックアップ共通 --- */
 .top_works_item {
-  --tilt: -5deg; /* ホバー時の傾き。位置ごとに左右バラバラに上書き */
+  --rest: -3deg; /* 初期状態の傾き。位置ごとに左右バラバラに上書き */
+  --tilt: 5deg;  /* ホバー時の傾き。--rest と反対向きにする */
   flex: 0 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transform: rotate(var(--rest));
   transition: transform 0.4s var(--ease);
 }
 
-/* 傾きを左右ランダムに（nth-child で疑似ランダムに振り分け） */
+/* 初期傾きを左右ランダムに（nth-child で疑似ランダムに振り分け）。
+   --tilt は必ず --rest と反対符号にしてホバーで逆に傾かせる */
 .top_works_item:nth-child(2n) {
-  --tilt: 6deg;
+  --rest: 4deg;
+  --tilt: -6deg;
 }
 .top_works_item:nth-child(3n) {
-  --tilt: -8deg;
+  --rest: -2.5deg;
+  --tilt: 7deg;
 }
 .top_works_item:nth-child(4n) {
-  --tilt: 5deg;
+  --rest: 3deg;
+  --tilt: -5deg;
 }
 .top_works_item:nth-child(5n) {
-  --tilt: -4deg;
+  --rest: -4deg;
+  --tilt: 5deg;
 }
 .top_works_item:nth-child(7n) {
-  --tilt: 9deg;
+  --rest: 2.5deg;
+  --tilt: -8deg;
+}
+
+/* ワードマークは傾けない（PC/SP モックアップのみ傾ける） */
+.top_works_item.mock--word {
+  --rest: 0deg;
+  --tilt: 0deg;
 }
 
 .mock_screen {
@@ -1041,7 +1055,7 @@ img {
   display: block;
   overflow: hidden;
   background: linear-gradient(140deg, var(--a), var(--b));
-  box-shadow: 0 22px 46px rgba(18, 30, 66, 0.28);
+  box-shadow: 0 22px 46px rgba(20, 20, 20, 0.28);
 }
 
 .mock_bar {
@@ -1049,14 +1063,14 @@ img {
   inset: 0 0 auto 0;
   height: 16%;
   background: rgba(255, 255, 255, 0.72);
-  border-bottom: 1px solid rgba(20, 30, 60, 0.08);
+  border-bottom: 1px solid rgba(20, 20, 20, 0.08);
 }
 
 /* ノートPC */
 .mock--laptop .mock_screen {
   width: clamp(220px, 26vw, 340px);
   aspect-ratio: 16 / 10;
-  border: 7px solid #232a3a;
+  border: 7px solid #232323;
   border-bottom: none;
   border-radius: 14px 14px 0 0;
 }
@@ -1064,20 +1078,19 @@ img {
 .mock--laptop .mock_base {
   width: calc(clamp(220px, 26vw, 340px) + 56px);
   height: 13px;
-  background: linear-gradient(#e6ebf3, #b9c3d4);
+  background: linear-gradient(#ebebeb, #c2c2c2);
   border-radius: 3px 3px 11px 11px;
-  box-shadow: 0 14px 26px rgba(18, 30, 66, 0.22);
 }
 
-/* スマホ（少し持ち上げる。傾きはホバー時にランダム付与） */
+/* スマホ（少し持ち上げる。初期からランダムに傾く） */
 .mock--phone {
-  transform: translateY(-14px);
+  transform: translateY(-14px) rotate(var(--rest));
 }
 
 .mock--phone .mock_screen {
   width: clamp(94px, 12vw, 128px);
   aspect-ratio: 1 / 2.04;
-  border: 7px solid #232a3a;
+  border: 7px solid #232323;
   border-radius: 22px;
 }
 
@@ -1089,7 +1102,7 @@ img {
   width: 34%;
   height: 7px;
   border-radius: 8px;
-  background: #232a3a;
+  background: #232323;
 }
 
 /* ワードマーク（参考の "TERUTERU creative" 位置） */
@@ -1106,11 +1119,11 @@ img {
   line-height: 1;
   letter-spacing: 0.01em;
   white-space: nowrap;
-  background: linear-gradient(92deg, #4fd9c0, #4bb8f5 42%, #7c9cff 72%, #a98bff);
+  background: linear-gradient(92deg, #b5b5b5, #a8a8a8 42%, #9c9c9c 72%, #8f8f8f);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: #4bb8f5;
+  color: #a8a8a8;
 }
 
 .mock--word em {
@@ -1151,7 +1164,7 @@ img {
   border-radius: 18px;
   overflow: hidden;
   background: var(--white-color);
-  box-shadow: 0 10px 40px rgba(20, 20, 40, 0.05);
+  box-shadow: 0 10px 40px rgba(20, 20, 20, 0.05);
   transition:
     transform 0.4s var(--ease),
     border-color 0.4s;
@@ -1159,7 +1172,7 @@ img {
 
 .top_achieve_card:hover {
   transform: translateY(-6px);
-  border-color: rgba(20, 20, 30, 0.2);
+  border-color: rgba(20, 20, 20, 0.2);
 }
 
 .top_achieve_thumb {
@@ -1233,7 +1246,7 @@ img {
 
 /* ---------- top : members ---------- */
 .top_members {
-  background: linear-gradient(180deg, rgba(20, 20, 30, 0.02), transparent);
+  background: linear-gradient(180deg, rgba(20, 20, 20, 0.02), transparent);
 }
 
 .top_members_list {
@@ -1250,12 +1263,12 @@ img {
   border: 1px solid var(--line-color);
   border-radius: 22px;
   background: rgba(255, 255, 255, 0.85);
-  box-shadow: 0 10px 40px rgba(20, 20, 40, 0.05);
+  box-shadow: 0 10px 40px rgba(20, 20, 20, 0.05);
   transition: 0.4s var(--ease);
 }
 
 .top_members_item:hover {
-  border-color: rgba(20, 20, 30, 0.2);
+  border-color: rgba(20, 20, 20, 0.2);
   transform: translateY(-4px);
 }
 
@@ -1356,7 +1369,7 @@ img {
   border: 1px solid var(--line-color);
   border-radius: 22px;
   background: rgba(255, 255, 255, 0.85);
-  box-shadow: 0 10px 40px rgba(20, 20, 40, 0.05);
+  box-shadow: 0 10px 40px rgba(20, 20, 20, 0.05);
   transition: 0.4s var(--ease);
   position: relative;
   overflow: hidden;
@@ -1377,7 +1390,7 @@ img {
 
 .top_service_item:hover {
   transform: translateY(-5px);
-  border-color: rgba(20, 20, 30, 0.2);
+  border-color: rgba(20, 20, 20, 0.2);
 }
 
 .top_service_item:hover::before {
@@ -1408,7 +1421,7 @@ img {
   font-weight: 500;
   letter-spacing: 0.04em;
   color: var(--accent-color);
-  background: rgba(248, 79, 101, 0.1);
+  background: rgba(129, 3, 3, 0.1);
   padding: 3px 10px;
   border-radius: 100px;
   white-space: nowrap;
@@ -1473,7 +1486,7 @@ img {
 
 /* ---------- top : faq ---------- */
 .top_faq {
-  background: linear-gradient(180deg, rgba(20, 20, 30, 0.02), transparent);
+  background: linear-gradient(180deg, rgba(20, 20, 20, 0.02), transparent);
 }
 
 .top_faq_list {
@@ -1609,7 +1622,7 @@ img {
 
 .service_switch_link:hover {
   color: var(--ink-color);
-  border-color: rgba(20, 20, 30, 0.25);
+  border-color: rgba(20, 20, 20, 0.25);
 }
 
 .service_switch_link.is-active {
@@ -1700,7 +1713,7 @@ img {
   border: 1px solid var(--line-color);
   border-radius: 22px;
   background: rgba(255, 255, 255, 0.85);
-  box-shadow: 0 10px 40px rgba(20, 20, 40, 0.05);
+  box-shadow: 0 10px 40px rgba(20, 20, 20, 0.05);
 }
 
 .service_item_no {
@@ -1733,7 +1746,7 @@ img {
   margin-top: 14px;
   padding: 9px 15px;
   border-radius: 10px;
-  background: rgba(248, 79, 101, 0.09);
+  background: rgba(129, 3, 3, 0.09);
   color: var(--ink-color);
   font-size: 13px;
   font-weight: 600;

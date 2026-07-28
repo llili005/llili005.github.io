@@ -210,14 +210,14 @@ window.addEventListener(
   { passive: true }
 );
 
-/*---------- 虹色トレイル背景（WebGL フィードバックバッファ） ----------*/
+/*---------- カーソルトレイル背景（WebGL フィードバックバッファ） ----------*/
 const glCanvas = document.querySelector('.js_gl');
 let glReady = false;
 if (glCanvas && !reduceMotion) glReady = initTrail(glCanvas);
 if (glCanvas && !glReady) {
   glCanvas.style.background =
-    'radial-gradient(60% 60% at 30% 25%, rgba(255, 143, 192, 0.3), transparent 60%),' +
-    'radial-gradient(55% 55% at 75% 65%, rgba(143, 220, 255, 0.28), transparent 60%), #ffffff';
+    'radial-gradient(60% 60% at 30% 25%, rgba(182, 182, 182, 0.3), transparent 60%),' +
+    'radial-gradient(55% 55% at 75% 65%, rgba(201, 201, 201, 0.28), transparent 60%), #ffffff';
 }
 
 function initTrail(canvas) {
@@ -232,7 +232,7 @@ function initTrail(canvas) {
 
   const VS = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
 
-  // 更新パス : 減衰 + 拡散したうえで、カーソル軌跡に虹色を注入
+  // 更新パス : 減衰 + 拡散したうえで、カーソル軌跡にグレーインクを注入
   const FS_UPDATE = `
     precision highp float;
     uniform sampler2D u_tex;
@@ -242,7 +242,7 @@ function initTrail(canvas) {
     uniform vec2 u_pp;
     uniform float u_amt;
     uniform float u_hue;
-    vec3 pal(float t){return 0.6+0.4*cos(6.28318*(vec3(1.0)*t+vec3(0.0,0.33,0.67)));}
+    vec3 pal(float t){float v=0.22+0.18*cos(6.28318*t);return vec3(v);}
     float segDist(vec2 p, vec2 a, vec2 b){
       vec2 pa=p-a, ba=b-a;
       float h=clamp(dot(pa,ba)/max(dot(ba,ba),1e-6),0.,1.);
@@ -270,7 +270,7 @@ function initTrail(canvas) {
       gl_FragColor = vec4(min(c, 1.2), 1.0);
     }`;
 
-  // 表示パス : 溜まった虹インクを白背景に淡く合成
+  // 表示パス : 溜まったグレーインクを白背景に淡く合成
   const FS_SHOW = `
     precision highp float;
     uniform sampler2D u_tex;
